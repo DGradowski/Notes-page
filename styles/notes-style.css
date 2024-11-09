@@ -35,17 +35,21 @@ nav ul a li {
     color: white;
 }
 
+nav a:hover{
+    background-color: #252525;
+}
+
 nav {
     border-bottom: rgb(19, 19, 19) 2px solid;
 }
 
-
-
 main , footer{
+    position: relative;
     background-color: #1d1d1df6;
     color: white;
-    width: 75%;
+    width: 60%;
     margin: 0 auto;
+    left: -15%;
     border: rgb(19, 19, 19) 2px solid;
 }
 
@@ -78,4 +82,55 @@ article ol {
 
 article ul{
     margin-left: 1em;
+}
+
+.puck-image {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 20%;
+}
+
+@keyframes puck {
+    0% {
+        left: -20%;
+        transform: scaleX(1);
+    }
+    20% {
+        left: -20%;
+        transform: scaleX(1);
+    }
+    40% {
+        left: 120%;
+        transform: scaleX(1);
+    }
+    41% {
+        left: 120%;
+        transform: scaleX(-1);
+    }
+    60% {
+        right: 120%;
+        transform: scaleX(-1);
+    }
+    80% {
+        left: -20%;
+        transform: scaleX(-1);
+    }
+    100% {
+        left: -20%;
+        transform: scaleX(-1);
+    }
+    
+}
+
+.chasing-puck {
+    position: fixed;
+    z-index: 10;
+    width: 20%;
+    bottom: 0;
+    left: -20%;
+    animation-name: puck;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }

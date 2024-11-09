@@ -39,7 +39,9 @@ nav {
     border-bottom: rgb(19, 19, 19) 2px solid;
 }
 
-
+nav a:hover{
+    background-color: #252525;
+}
 
 main , footer{
     background-color: #1d1d1df6;
