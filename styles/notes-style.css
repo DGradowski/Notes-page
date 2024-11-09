@@ -8,7 +8,7 @@
 
 body {
     background: url("../images/background.png") no-repeat center center fixed;
-    background-size: c;
+    background-size: cover;
     background-color: black;
 }
 
@@ -42,7 +42,7 @@ nav {
 
 
 main , footer{
-    background-color: #313131da;
+    background-color: #1d1d1df6;
     color: white;
     width: 75%;
     margin: 0 auto;
@@ -59,6 +59,7 @@ footer {
 
 article {
     text-align: center;
+    margin: 20px;
 }
 
 article p, article h1 {
