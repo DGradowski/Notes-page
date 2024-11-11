@@ -19,7 +19,6 @@ nav ul {
 }
 
 nav ul a {
-    height: 100%;
     background-color: #313131;
     border-left: rgb(19, 19, 19) 1px solid;
     border-right: rgb(19, 19, 19) 1px solid;
@@ -27,12 +26,14 @@ nav ul a {
     text-align: center;
     flex: 1;
     text-decoration: none;
+    align-self: stretch;
 }
 
 nav ul a li {
     font-size: 2rem;
     text-decoration: none;
     color: white;
+    height: 100%;
 }
 
 nav a:hover{
@@ -86,9 +87,56 @@ article ul{
 
 .puck-image {
     position: fixed;
-    right: 0;
+    right: 5%;
     bottom: 0;
     width: 20%;
+    height: fit-content;
+}
+
+.puck-image img {
+    width: 100%;
+    height: auto;
+}
+
+.talk-bubble {
+    padding: .5rem;
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: -40px;
+	width: 100%;
+    border-radius: .5rem;
+	background-color: white;
+    border: 5px solid;
+    border-color: #666 #666;
+    float: left;
+}
+
+.talktext p {
+    color: black;
+    text-align: center;
+}
+
+.tri-right.border.btm-right-in:before {
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+    right: calc(50% - 8px);
+	bottom: -40px;
+	border: 20px solid;
+	border-color: #666 #666 transparent transparent;
+}
+.tri-right.btm-right-in:after{
+	content: ' ';
+	position: absolute;
+	width: 0;
+	height: 0;
+    left: auto;
+	right: 50%;
+	bottom: -20px;
+	border: 12px solid;
+	border-color: white white transparent transparent;
 }
 
 @keyframes puck {

@@ -19,7 +19,6 @@ nav ul {
 }
 
 nav ul a {
-    height: 100%;
     background-color: #313131;
     border-left: rgb(19, 19, 19) 1px solid;
     border-right: rgb(19, 19, 19) 1px solid;
