@@ -69,3 +69,59 @@ article p, article h1 {
 article a {
     color: rgb(204, 4, 4);
 }
+
+@keyframes puck {
+    0% {
+        left: -20%;
+        transform: scaleX(1);
+    }
+    20% {
+        left: -20%;
+        transform: scaleX(1);
+    }
+    40% {
+        left: 120%;
+        transform: scaleX(1);
+    }
+    41% {
+        left: 120%;
+        transform: scaleX(-1);
+    }
+    60% {
+        right: 120%;
+        transform: scaleX(-1);
+    }
+    80% {
+        left: -20%;
+        transform: scaleX(-1);
+    }
+    100% {
+        left: -20%;
+        transform: scaleX(-1);
+    }
+    
+}
+
+.chasing-puck {
+    position: fixed;
+    z-index: 10;
+    width: 20%;
+    bottom: 0;
+    left: -20%;
+    animation-name: puck;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@media screen and (max-width: 600px) {
+    .puck-image {
+        display: none;
+    }
+    main, footer{
+        display: block;
+        position: relative;
+        width: 90%;
+        left: 0;
+    }
+}

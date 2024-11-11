@@ -39,7 +39,13 @@ const texts = [
     `Młody chłopak, pop i oficer Politbiura lecą samolotem. Nagle silnik przestaje działać - są tylko dwa spadochrony.
     Oficer Politbiura mówi "Dajcie mi spadochron, tylko ja ochronię ojczyznę przed imperialistycznymi szpiegami" i wyskakuje.
     Na co pop: "Chłopcze, ja jestem już stary, swoje przeżyłem, weź ten spadochron". Ale chłopak już wyskoczył bez spadochronu, dla niego trud skończony.`,
-    `Łotysz chodzi po polu, szuka zimnioka. Nagle słyszy kozę, jest bardzo ucieszon. Łotysz zabije kozę i będzie najedzony przez rok! Łapie kamień i szuka, ale nie ma nigdzie kozy. To tylko odgłos pustego żołądka. Chłop jest smutny, jest mu zimno i ma halucynacje. Umiera.`
+    `Łotysz chodzi po polu, szuka zimnioka. Nagle słyszy kozę, jest bardzo ucieszon. Łotysz zabije kozę i będzie najedzony przez rok! Łapie kamień i szuka, ale nie ma nigdzie kozy. To tylko odgłos pustego żołądka. Chłop jest smutny, jest mu zimno i ma halucynacje. Umiera.`,
+    `"Gdyby stopy miały być napojem były by piwem.
+    Kocham piwo... 😳" ~ Dawid Gradowski 2k23r`,
+    `"Nie dogadamy się jak lubisz jarmuż" ~ Kaz Bałagane - "All day everyday"`,
+    `"Nie każdy musi zostać informatykiem..." ~ Miś Smoliś`,
+    `Jak coś robić to porządnie, jak wysyłać stopy to tylko do puckmoment`,
+    `"Przeglądasz sobie sztuki, przybliżasz im na stopy" ~ Kaz Bałagane - "Money Mitch"`
 ]
 
 function changeTextBubblePosition() {
@@ -55,10 +61,12 @@ function changeTextBubbleHeight() {
     console.log(document.querySelector(".puck-img"))
     console.log(puckImage.offsetHeight + textBubble.offsetHeight + 40)
     console.log(windowHeight)
+    textBubble.style.display = "block"
     if (puckImage.offsetHeight + textBubble.offsetHeight + 40 > windowHeight) {
         textBubble.style.display = "none"
-    } else if (textBubble.style.display != "none"){
+    } else {
         textBubble.style.display = "block"
+        changeTextBubblePosition();
     }
 }
 

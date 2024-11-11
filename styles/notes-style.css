@@ -22,7 +22,7 @@ nav ul a {
     background-color: #313131;
     border-left: rgb(19, 19, 19) 1px solid;
     border-right: rgb(19, 19, 19) 1px solid;
-    padding: 0.25em;
+    padding: 0.25rem;
     text-align: center;
     flex: 1;
     text-decoration: none;
@@ -115,6 +115,7 @@ article ul{
 .talktext p {
     color: black;
     text-align: center;
+    font-size: 1rem;
 }
 
 .tri-right.border.btm-right-in:before {
@@ -181,4 +182,16 @@ article ul{
     animation-duration: 10s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+}
+
+@media screen and (max-width: 600px) {
+    .puck-image {
+        display: none;
+    }
+    main, footer{
+        display: block;
+        position: relative;
+        width: 90%;
+        left: 0;
+    }
 }
