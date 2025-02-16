@@ -1,0 +1,185 @@
+PWD e:\Projekciki\Stronka\docs\sem2\analiza-matematyczna2\ultimate-notatka
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT e:\Projekciki\Stronka\docs\sem2\analiza-matematyczna2\ultimate-notatka\analizka2-notateczka.tex
+OUTPUT analizka2-notateczka.log
+INPUT C:\Program Files\MikTeX\tex\latex\base\article.cls
+INPUT C:\Program Files\MikTeX\tex\latex\base\article.cls
+INPUT C:\Program Files\MikTeX\tex\latex\base\size11.clo
+INPUT C:\Program Files\MikTeX\tex\latex\base\size11.clo
+INPUT C:\Program Files\MikTeX\tex\latex\base\size11.clo
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MikTeX\tex\latex\base\inputenc.sty
+INPUT C:\Program Files\MikTeX\tex\latex\base\inputenc.sty
+INPUT C:\Program Files\MikTeX\tex\latex\base\fontenc.sty
+INPUT C:\Program Files\MikTeX\tex\latex\base\fontenc.sty
+INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecrm1095.tfm
+INPUT C:\Program Files\MikTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsmath\amsmath.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsmath\amstext.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsmath\amsgen.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsmath\amsbsy.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsmath\amsopn.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsfonts\amssymb.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amsfonts\amsfonts.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Program Files\MikTeX\tex\latex\amscls\amsthm.sty
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\hyperref.sty
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\hyperref.sty
+INPUT C:\Program Files\MikTeX\tex\generic\iftex\iftex.sty
+INPUT C:\Program Files\MikTeX\tex\generic\iftex\iftex.sty
+INPUT C:\Program Files\MikTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Program Files\MikTeX\tex\latex\graphics\keyval.sty
+INPUT C:\Program Files\MikTeX\tex\latex\kvsetkeys\kvsetkeys.sty
+INPUT C:\Program Files\MikTeX\tex\latex\kvsetkeys\kvsetkeys.sty
+INPUT C:\Program Files\MikTeX\tex\generic\kvdefinekeys\kvdefinekeys.sty
+INPUT C:\Program Files\MikTeX\tex\generic\kvdefinekeys\kvdefinekeys.sty
+INPUT C:\Program Files\MikTeX\tex\generic\pdfescape\pdfescape.sty
+INPUT C:\Program Files\MikTeX\tex\generic\pdfescape\pdfescape.sty
+INPUT C:\Program Files\MikTeX\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Program Files\MikTeX\tex\generic\ltxcmds\ltxcmds.sty
+INPUT C:\Program Files\MikTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+INPUT C:\Program Files\MikTeX\tex\generic\pdftexcmds\pdftexcmds.sty
+INPUT C:\Program Files\MikTeX\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Program Files\MikTeX\tex\generic\infwarerr\infwarerr.sty
+INPUT C:\Program Files\MikTeX\tex\latex\hycolor\hycolor.sty
+INPUT C:\Program Files\MikTeX\tex\latex\hycolor\hycolor.sty
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\nameref.sty
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\nameref.sty
+INPUT C:\Program Files\MikTeX\tex\latex\refcount\refcount.sty
+INPUT C:\Program Files\MikTeX\tex\latex\refcount\refcount.sty
+INPUT C:\Program Files\MikTeX\tex\generic\gettitlestring\gettitlestring.sty
+INPUT C:\Program Files\MikTeX\tex\generic\gettitlestring\gettitlestring.sty
+INPUT C:\Program Files\MikTeX\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Program Files\MikTeX\tex\latex\kvoptions\kvoptions.sty
+INPUT C:\Program Files\MikTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Program Files\MikTeX\tex\latex\etoolbox\etoolbox.sty
+INPUT C:\Program Files\MikTeX\tex\generic\stringenc\stringenc.sty
+INPUT C:\Program Files\MikTeX\tex\generic\stringenc\stringenc.sty
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\pd1enc.def
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\pd1enc.def
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\pd1enc.def
+INPUT C:\Program Files\MikTeX\tex\generic\intcalc\intcalc.sty
+INPUT C:\Program Files\MikTeX\tex\generic\intcalc\intcalc.sty
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\puenc.def
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\puenc.def
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\puenc.def
+INPUT C:\Program Files\MikTeX\tex\latex\url\url.sty
+INPUT C:\Program Files\MikTeX\tex\latex\url\url.sty
+INPUT C:\Program Files\MikTeX\tex\generic\bitset\bitset.sty
+INPUT C:\Program Files\MikTeX\tex\generic\bitset\bitset.sty
+INPUT C:\Program Files\MikTeX\tex\generic\bigintcalc\bigintcalc.sty
+INPUT C:\Program Files\MikTeX\tex\generic\bigintcalc\bigintcalc.sty
+INPUT C:\Program Files\MikTeX\tex\generic\atbegshi\atbegshi.sty
+INPUT C:\Program Files\MikTeX\tex\latex\base\atbegshi-ltx.sty
+INPUT C:\Program Files\MikTeX\tex\latex\base\atbegshi-ltx.sty
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\hpdftex.def
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\hpdftex.def
+INPUT C:\Program Files\MikTeX\tex\latex\hyperref\hpdftex.def
+INPUT C:\Program Files\MikTeX\tex\latex\atveryend\atveryend.sty
+INPUT C:\Program Files\MikTeX\tex\latex\base\atveryend-ltx.sty
+INPUT C:\Program Files\MikTeX\tex\latex\base\atveryend-ltx.sty
+INPUT C:\Program Files\MikTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
+INPUT C:\Program Files\MikTeX\tex\latex\rerunfilecheck\rerunfilecheck.sty
+INPUT C:\Program Files\MikTeX\tex\generic\uniquecounter\uniquecounter.sty
+INPUT C:\Program Files\MikTeX\tex\generic\uniquecounter\uniquecounter.sty
+INPUT C:\Program Files\MikTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Program Files\MikTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT .\analizka2-notateczka.aux
+INPUT .\analizka2-notateczka.aux
+INPUT analizka2-notateczka.aux
+OUTPUT analizka2-notateczka.aux
+INPUT .\analizka2-notateczka.out
+INPUT .\analizka2-notateczka.out
+INPUT analizka2-notateczka.out
+INPUT analizka2-notateczka.out
+OUTPUT analizka2-notateczka.pdf
+INPUT .\analizka2-notateczka.out
+INPUT .\analizka2-notateczka.out
+OUTPUT analizka2-notateczka.out
+INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecrm1728.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecrm1200.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmr12.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmr8.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmr6.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmmi12.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmmi8.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmmi6.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmsy8.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmsy6.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MikTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MikTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MikTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Program Files\MikTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MikTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MikTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecrm1440.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecbx1440.tfm
+INPUT .\analizka2-notateczka.toc
+INPUT .\analizka2-notateczka.toc
+INPUT analizka2-notateczka.toc
+INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecbx1095.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmmi10.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmsy10.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmex10.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+OUTPUT analizka2-notateczka.toc
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecrm0800.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecbx1200.tfm
+INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecrm0600.tfm
+INPUT analizka2-notateczka.aux
+INPUT .\analizka2-notateczka.out
+INPUT .\analizka2-notateczka.out
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1095.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk
+INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmmi6.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Program Files\MikTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb

@@ -1,0 +1,429 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[hidelinks]{hyperref}
+
+\title{Analiza Matematyczna 2 - poradnik}
+\author{Dawid Gradowski (puckmoment na dc)}
+\date{Luty 2025}
+\begin{document}
+\maketitle
+\renewcommand\contentsname{Spis treści}
+\tableofcontents
+\newpage
+\section{Prolog}
+\vbox{
+    Ten dokument tworzę dlatego by poznać wspaniałe narzędzie
+    jakim jest {\LaTeX} oraz by przygotować się do egzaminu
+    z Analizy Matematycznej 2, ale to nie są jedyne powody.
+    Tworzę ją jako człowiek z misją, człowiek który upierdolił wszystkie
+    3 kartkówki, z czego na 2 z nich dostał 0 punktów. Nie lękajcie się jednak
+    czytelnicy tej notatki, ponieważ jestem dowodem na to, że nawet z najgorszych
+    sytuacji da się wyjść obronną ręką.
+}
+\vbox{
+    Miejsce na wytłumaczenie z czego będzie się składać notatka.
+}
+
+
+\section{Przydatne rzeczy do wszystkiego}
+\subsection{Szeregi harmoniczne różnej krotności}
+\vbox{
+    Jednym z typowych szeregów jest 
+    tak zwany \textbf{szereg} \textbf{harmoniczny}.
+    Znajomość tego szeregu oraz kiedy jest on zbieżny
+    jest kluczowa jeśli chce się zdać ten przedmiot. Szereg ten wygląda
+    następująco:
+    \[\sum_{n=1}^{\infty}\frac{1}{n^p}\]
+    gdzie:
+    \begin{list}{$\bullet$}{}
+        \item  dla $p \leq 1$ ciąg ten jest rozbieżny
+        \item  dla $p > 1$ ciąg ten jest zbieżny
+    \end{list}
+    Szeregi harmoniczne oraz ich zbieżności bardzo nam się przydadzą
+    w momencie gdy będziemy korzystać w kryterium porównawczego
+    o którym można przeczytać w dalszej części notatki.
+}
+\subsection{Wzór na $e$}
+\vbox{
+    Bardzo ważnym wzorem w zadaniu pierwszym na kartkówce pierwszej
+    jest coś co ja nazywam wzorem na $e$. Wygląda on następująco:
+    \[\lim_{n\to\infty}(1 + \frac{1}{n})^n = e\]
+    Wzoru tego trzeba było użyć na każdej kartkówce nr 1 jaką rozwiązywałem
+    oraz zawsze w tym samym miejscu, w zadaniu 1
+    w przykładzie w którym używało się kryterium Cauchy'ego. Nigdy nie będzie on
+    tak ładnie widoczny jak powyżej więc na przykładzie zadania z kartkóweczki
+    wytłumacze jak uzyskać odpowiednią postać. Na kartkówce był taki 
+    przykład:
+    \[
+        \sum_{n=1}^{\infty}(\frac{3n^2 - n}{3n^2 + 4n})^{n^2}
+    \]
+    W trakcie stosowania kryterium Cauchy'ego otrzymujemy następującą postać:
+    \[\lim_{n\to\infty}(\frac{3n^2 - n}{3n^2 + 4n})^n\]
+    W pierwszej kolejności możemy wyciągnąć $n$ przed nawias by w nawiasie zostały
+    nam $n$ pierwszej potęgi.
+    \[\lim_{n\to\infty}(\frac{3n^2 - n}{3n^2 + 4n})^n = 
+        \lim_{n\to\infty}(\frac{n(3n - 1)}{n(3n + 4)})^n =
+        \lim_{n\to\infty}(\frac{3n - 1}{3n + 4})^n
+    \]
+    Aby w nawiasie uzyskać postać $1 + \frac{1}{x}$
+    trzeba uzyskać w liczniku $3n + 4$ tak samo jak jest w mianowniku.
+    $3n - 1 = 3n + 4 - 5$ więc można to zapisać następująco:
+    \[\lim_{n\to\infty}(\frac{3n - 1}{3n + 4})^n = 
+        \lim_{n\to\infty}(\frac{3n + 4 - 5}{3n + 4})^n =
+        \lim_{n\to\infty}(\frac{3n + 4}{3n + 4} + \frac{-5}{3n + 4})^n = 
+        \lim_{n\to\infty}(1 + \frac{-5}{3n + 4})^n
+    \]
+    Już coraz bardziej wygląda to jak postać której szukamy. Brakuje nam jedyneczki w liczniku.
+    Aby mieć jedynkę w liczniku trzeba górę i dół przemnożyć przez $-\frac{1}{5}$.
+    \[
+        \lim_{n\to\infty}(1 + \frac{-5}{3n + 4})^n = 
+        \lim_{n\to\infty}(1 + \frac{-5}{3n + 4} \times \frac{-\frac{1}{5}}{-\frac{1}{5}})^n\ = 
+        \lim_{n\to\infty}(1 + \frac{1}{-\frac{3n}{5} - \frac{4}{5}})^n
+    \]
+}
+\vbox{
+    No i teraz mamy postać typu kongo, która wygląda dodupnie, ale spokojnie bo to
+    już ostatnia prosta. Wytłumaczę na prostym przykładzie co trzeba zrobić:
+    \[
+        \lim_{n\to\infty}(1 + \frac{1}{x})^y =
+        \lim_{n\to\infty}((1 + \frac{1}{x})^x)^{\frac{y}{x}} = 
+        e^{\lim_{n\to\infty}\frac{y}{x}}
+    \]
+    Robiąc to samo na naszym przykładzie otrzymamy:
+    \[
+        \lim_{n\to\infty}(1 + \frac{-5}{3n + 4})^n =
+        \lim_{n\to\infty}((1 + \frac{1}{-\frac{3n}{5} - \frac{4}{5}})^{-\frac{3n}{5} - \frac{4}{5}})^{\frac{n}{-\frac{3n}{5} - \frac{4}{5}}} = 
+        e^{-\frac{5}{3}} = \frac{1}{e^{\frac{5}{3}}}
+    \]
+    I tak właśnie z jakiegoś gówna dostaliśmy piękne $e$.
+}
+\subsection{Reguła łańcuchowa}
+\vbox{
+    Reguła łańcuchowa to jedno z podstawowych narzędzi rachunku różniczkowego
+    (liczenia pochodnych), 
+    które pozwala na liczenie pochodnych funkcji złożonych. Reguła wygląda następująco.
+    Zakładamy, że mamy funkcję składającą się z 2 funkcji:
+    \[
+        h(x) = g(f(x))
+    \]
+    gdzie:
+    \begin{list}{$\bullet$}{}
+        \item $f(x)$ to funkcja wewnętrzna
+        \item $g(u)$ to funkcja zewnętrzna, przy czym nasze $u = f(x)$
+    \end{list}
+    Aby znaleźć pochodną $h(x)$, stosujemy regułę łańcuchową:
+    \[
+        h'(x) = g'(f(x)) \cdot f'(x)
+    \]
+    Jak stosować to w praktyce. Weźmy sobie taki przykład:
+    \[
+        h(x)=\sqrt{5x + 3} = (5x + 3)^{\frac{1}{2}}
+    \]
+    I teraz określamy sobie co jest funkcję wewnętrzną, a co zewnętrzną:
+    \begin{list}{$\bullet$}{}
+        \item funkcja wewnętrzna: $f(x) = 5x + 3$
+        \item funkcja zewnętrzna: $g(u) = u^{\frac{1}{2}}$, przy czym nasze $u = f(x)$
+    \end{list}
+    Licząc pochodnę otrzymujemy:
+    \begin{list}{$\bullet$}{}
+        \item $f'(x) = 5$
+        \item $g'(u) = \frac{1}{2} \cdot u^{\frac{1}{2} - 1} = \frac{1}{2} \cdot u^{-\frac{1}{2}}
+        = \frac{1}{2} \cdot (5x + 3)^{-\frac{1}{2}} = \frac{1}{2\sqrt{5x + 3}}$
+    \end{list}
+    Wstawiając więc otrzymane pochodne do wzoru na regułę łańcuchową otrzymujemy:
+    \[
+        h'(x) = \frac{1}{2\sqrt{5x + 3}} \cdot 5
+        = \frac{5}{2\sqrt{5x + 3}}
+    \]
+
+}
+\subsection{Inne przydatne własności}
+\vbox{
+    \[
+        \lim_{x \to 0} \frac{\sin x}{x} = 1
+    \]
+    \[
+        \text{tg}x = \frac{\sin x}{\cos x}
+    \]
+    \[
+        \text{ctg}x = \frac{\cos x}{\sin x}
+    \]
+}
+
+
+\section{Kryteria określające zbieżność}
+\vbox{
+    Kryteria opisane poniżej pozwalają określić czy dany szereg
+    jest zbieżny czy rozbieżny. Generalnie to chuj wie co to znaczy,
+    jak chcesz wiedzieć to sobie w google wpisz, ale to nie jest wiedza
+    potrzebna do zdania.
+}
+
+\subsection{Kryterium Cauchy'ego}
+\vbox{
+    Dla szeregu $\sum_{n = 1}^{\infty}{a_n}$ jego zbieżność wyznaczamy
+    licząc $g$ albo $q$ (nie mogłem się odczytać w notatkach jaka to literka
+    ale ja na kartkówce co zdałem pisałem $g$).
+    \[
+        g = \lim_{n\to\infty}{\sqrt[n]{\left\lvert a_n \right\rvert}}
+    \]
+    Najczęściej wartość bezględna $\left\lvert a_n \right\rvert$ to po prostu $a_n$. Posiadając policzone 
+    $g$ dowiadujemy się, że:
+    \begin{list}{$\bullet$}{}
+        \item $g < 1$ to szereg jest bezwzględnie zbieżny
+        \item $g > 1$ to szereg jest rozbieżny
+        \item $g = 1$ to kryterium jest niewystarczające, więc nie rozstrzyga zbieżności
+    \end{list}
+    Kryterium to najlepiej stosować gdy całe wyrażenie jest do potęgi $n^p$, gdzie
+    $p$ to jakaś liczba całkowita.
+}
+
+\subsection{Kryterium d'Alemberta}
+\vbox{
+    Tak samo jak w poprzednik kryterium, dla szeregu $\sum_{n = 1}^{\infty}{a_n}$ jego zbieżność wyznaczamy
+    licząc $g$. Zmienia się jednak wzór
+    \[
+        g = \lim_{n\to\infty}{\left\lvert \frac{a_{n + 1}}{a_n} \right\rvert}
+    \]
+    Najczęściej wartość bezględna $\left\lvert \frac{a_{n + 1}}{a_n} \right\rvert$ to po prostu $\frac{a_{n + 1}}{a_n}$. Posiadając policzone 
+    $g$ tak samo jak w poprzednim dowiadujemy się, że:
+    \begin{list}{$\bullet$}{}
+        \item $g < 1$ to szereg jest bezwzględnie zbieżny
+        \item $g > 1$ to szereg jest rozbieżny
+        \item $g = 1$ to kryterium jest niewystarczające, więc nie rozstrzyga zbieżności
+    \end{list}
+    Kryterium to najlepiej stosować gdy w szeregu występują jakieś silnie albo $n$-te potęgi.
+}
+
+\subsection{Kryterium porównawcze}
+\vbox{
+    Jeśli mamy 2 szeregi dodatnie
+    \[
+        (A) \sum_{n=1}^{\infty}a_n
+    \]
+    \[
+        (B) \sum_{n=1}^{\infty}b_n
+    \]
+    i dla prawie wszystkich $n$ zachodzi $a_n \leq b_n$ to:
+    \begin{list}{$\bullet$}{}
+        \item ze zbieżności szeregu $(B)$ wynika zbieżność szeregu $(A)$
+        \item z rozbieżności szeregu $(A)$ wynika zbieżność szeregu $(B)$
+    \end{list}
+    Ewentualnie jak komuś łatwiej zapamiętać to:
+    \begin{list}{$\bullet$}{}
+        \item ze zbieżności większego szeregu możemy udowodnić zbieżność szeregu mniejszego
+        \item z rozbieżności szeregu mniejszego możemy udowodnić zbieżność szeregu większego
+    \end{list}
+    Prawie wszystkie $n$ oznacza, że dla jakiegoś $n$ staje się to prawdą, bo jak któreś $n$ jest prawdą
+    to później idzie to w nieskończoność, a to całkiem sporo przypadków jakby nie patrzeć.
+    Zwykle jest tak, że już dla $n = 1$ jest to prawdą, więc nie ma się czym martwić. \\
+    Kryterium to najlepiej stosować gdy dla dużych $n$ nasze $\sum_{n=1}^{\infty}a_n$ przypomina szereg
+    harmoniczny jakiejkolwiek krotności. Tylko co to znaczy, że dla dużych $n$ coś przypomina nam coś?
+    To bardzo proste. Weźmy dla przykładu taki szereg:
+    \[
+        \sum_{n = 1}^{\infty} \frac{n + 1}{3n^2 - n}
+    \]
+    Dla małych $n$ jedynka w liczniku ma dość duży wpływ na wartość wyrażenia, 
+    ale gdyby nasze $n$ było olbrzymie to byłby to że tak to ujmę jeden chuj, dlatego:
+    \[
+        \sum_{n = 1}^{\infty} \frac{n + 1}{3n^2 - n} \approx 
+        \sum_{n = 1}^{\infty} \frac{n}{3n^2 - n}
+    \]
+}
+\vbox{
+    Mając taką postać możemy wyciągnąć $n$ przed nawias
+    \[
+        \sum_{n = 1}^{\infty} \frac{n}{3n^2 - n} = 
+        \sum_{n = 1}^{\infty} \frac{n}{n(3n - 1)} = 
+        \sum_{n = 1}^{\infty} \frac{1}{3n - 1} \approx 
+        \sum_{n = 1}^{\infty} \frac{1}{3n} = 
+        \frac{1}{3} \times \sum_{n = 1}^{\infty} \frac{1}{n}
+    \]
+    Możemy teraz zauważyć podobieńtwo do szeregu harmonicznego o którym pisałem w 
+    części 2.1. Jest to szereg harmoniczny pierwszego stopnia, który jest rozbieżny.
+    Teraz aby udowodnić rozbieżność znajdźmy szereg harmoniczny mniejszy od naszego ciągu.
+    \[
+        \sum_{n = 1}^{\infty} \frac{n + 1}{3n^2 - n} \geq 
+        \sum_{n = 1}^{\infty} \frac{1}{4n}
+    \]
+    Na mocy kryterium porównawczego, szereg ten jest rozbieżny.
+}
+
+\subsection{Kryterium Leibniza}
+\vbox{
+    Jest to kryterium zbieżności szeregów naprzemiennych, które
+    określa warunkową zbieżność szeregu. Nie do końca wiem co to znaczy ale
+    tak jest. Szereg $\sum_{n=0}^{\infty}(-1)^n a_n$ jest zbieżny warunkowo gdy:
+    \begin{enumerate}
+        \item $\lim_{n \to \infty} a_n = 0$,
+        \item Ciąg $a_n$ jest nierosnący, czyli $a_n - a_{n + 1} \geq 0$
+    \end{enumerate}
+    \textbf{UWAGA! Trzeba pamiętać, że określa to wyłącznie zbieżność warunkową
+    szeregu a nie bezwzględną!}
+}
+
+\section{Szeregi potęgowe}
+\vbox{
+    Wzór ogólny szeregu potęgowego wygląda następująco:
+    \[
+        \sum_{n = 0}^{\infty} a_n (x - x_0)^n
+    \]
+}
+\vbox{
+    Dla takiego szeregu potęgowego możemy wyliczyć promień zbieżności $r$.
+    Promień wykorzystujemy przy liczeniu przedziału zbieżności.
+}
+\vbox{
+    Przedział zbieżności określa dla jakich wartości $x$ szereg ten jest 
+    zbieżny, nie określa on jednak zbieżności na granicach przedziału.
+    Szereg jest zbieżny gdy:
+    \[
+        x \in (x_0 - r ; x_0 + r)
+    \]
+}
+\vbox{
+    Obszar zbieżności jest tym samym co przedział zbieżności ale z uwzględnieniem
+    zbieżności dla wartości skrajnych.
+}
+\subsection{Kryterium Cauchy'ego - Hadamarda}
+\vbox{
+    Kryterium to określa promień zbieżności szeregu potęgowego.
+    Jest ono bardzo podobne do kryterium Cauchy'ego.
+    Zaczynamy od policzenia $g$ z tego samego wzoru,
+    którego używaliśmy przy kryterium Cauchy'ego
+    \[
+        g = \lim_{n\to\infty}{\sqrt[n]{\left\lvert a_n \right\rvert}}
+    \]
+    Teraz w zależności od obliczonego $g$, nasze $r$ jest równe:
+    \begin{equation}
+        r=\begin{cases}
+          \infty, & {\text{if }} g = 0\\
+          0, & {\text{if }} g = \infty\\
+          \frac{1}{g}, & {\text{if }} g < 0 < \infty
+        \end{cases}
+    \end{equation}
+}
+
+\subsection{Kryterium d'Alemberta (szeregi potęgowe)}
+\vbox{
+    Tak jak wykorzystaliśmy kryterium Cauchy'ego tak bliźniaczo możemy wykorzystać
+    kryterium d'Alemberta.
+    \[
+        g = \lim_{n\to\infty}{\left\lvert \frac{a_{n + 1}}{a_n} \right\rvert}
+    \]
+    i następnie sytuacja wygląda dokładnie tak samo jak w poprzednim kryterium, więc
+    używamy równania (1). Można też zauważyć, że nasze $r$, jeśli granica istnieje
+    jest po prostu równe 
+    \[
+        r = \lim_{n\to\infty}{\left\lvert \frac{a_{n}}{a_{n + 1}} \right\rvert}
+    \]
+}
+
+\section{Rozwijanie funkcji w szereg}
+\vbox{
+    Istnieje coś takiego jak szereg Taylora, który wygląda następująco:
+    \[
+        \sum_{n = 0}^{\infty}\frac{f^{(n)}(x_0)}{n!}(x - x_0)
+    \]
+    Na kartkówcę drugiej trzeba będzie najprawdopodobniej rozwinąć funkcję w szeregu
+    Maclaurina. Jest to szereg Taylora dla którego $x_0 = 0$.
+    Rozwinięcie funkcji w szereg polega na wyliczeniu dużej ilości pochodnych tak,
+    aby w pewnym momencie wyznaczyć wzór na $n$-tą pochodną. Jak pierwszy raz
+    zobaczyłem, że muszę coś takiego zrobić to się załamałem i dałem ff, ale ty tak
+    nie rób. Pokażę ci zaraz wspaniałe wzorki :).
+}
+
+\subsection{Funkcja z kreską ułamkową}
+\vbox{
+    Nie będę zgrywał bohatera i po prostu się przyznam, że nie wiedziałem
+    jak nazwać tą fukcję, ale ta funkcja wygląda podobnie do czegoś takiego:
+    \[
+        f(x) = \frac{3x}{8 + x^3}
+    \]
+    Jeśli mamy coś takiego w zadaniu to należy zapamiętać, że:
+    \[
+        \frac{1}{1 - q} = \sum_{n = 0}^{\infty}q^n
+        \text{\space lub \space}
+        \frac{1}{1 + q} = \sum_{n = 0}^{\infty}(-1)^n q^n
+    \]
+    wtedy kiedy $q \in (-1, 1)$. Dla przykładu rozwińmy sobie podaną wyżej funkcje. W liczniku potrzebujemy samej
+    $1$, a w mianowniku $1 + q$ z czego $q$ może być czymś dziwnym, a więc
+    \[
+        \frac{3x}{8 + x^3} = 
+        3x \times \frac{1}{{8 + x^3}} =
+        \frac{3x}{8} \times \frac{1}{{1 + \frac{x^3}{8}}} = 
+        \frac{3x}{8} \times \sum_{n = 0}^{\infty}(-1)^n (\frac{x^3}{8})^n
+    \]
+    Mamy już szereg ale to nie koniec zadania. Teraz musimy pomnożyć
+    to co jest przed szeregiem z tym co jest w szeregu. Nie ma się tu czego
+    bać po prostu wymnażamy jakby tego $\sum$ nie było. Można sam szereg sobie
+    ładniej zapisać:
+    \[
+        \frac{3x}{8} \times \sum_{n = 0}^{\infty}(-1)^n (\frac{x^3}{8})^n = 
+        \frac{3x}{8} \times \sum_{n = 0}^{\infty}(-1)^n \frac{x^{3n}}{8^{n}} = 
+        \sum_{n = 0}^{\infty}(-1)^n \frac{3}{8^{n + 1}}x^{3n + 1}
+    \]
+    Trzeba też wyznaczyć dla jakich $x$ stwierdzenie $\frac{x^3}{8} \in (-1, 1)$ co jest równoznawcze z
+    \[
+        -1 < \frac{x^3}{8} < 1
+    \]
+    \[
+        -8 < {x^3} < 8
+    \]
+    \[
+        -2 < x < 2
+    \]
+}
+
+\subsection{Funkcja z logarytmen naturalnym}
+\vbox{
+    Wzór wygląda następująco
+    \[
+        ln(1 + t) = \sum_{n = 1}^{\infty}(-1)^{n - 1} \frac{t^n}{n}
+    \]
+    gdzie $t \in (-1, 1)$. \textbf{Warto zwrócić uwagę na to, że szereg zaczyna
+    się od jedynki, a nie od zera.}
+    Zasada używania wzoru jest podobna jak w sekcji 5.1. Przykład:
+    \[
+        f(x) = x \ln(1 - 2x) = 
+        x \sum_{n = 1}^{\infty}(-1)^{n - 1} \cdot \frac{(-2x)^n}{n}
+    \]
+    \[
+        = \sum_{n = 1}^{\infty}(-1)^{n - 1} \cdot (-1)^{n} \cdot \frac{2^n}{n} x^{n + 1}
+        = \sum_{n = 1}^{\infty} (-1) \cdot \frac{2^n}{n} x^{n + 1}
+    \]
+}
+
+\subsection{Inne funkcje}
+\vbox{
+    Istnieją jeszcze 3 wzory, ale nie są one potrzebne do zdania kartkówek.
+    Te wzory to:
+    \[
+        e^x = \sum_{n = 0}^{\infty} \frac{x^n}{n!} \text{\space dla \space} x \in R
+    \]
+    \[
+        \sin{x} = \sum_{n = 0}^{\infty} (-1)^n \cdot \frac{x^{2n + 1}}{(2n + 1)!} \text{\space dla \space} x \in R
+    \]
+    \[
+        \cos{x} = \sum_{n = 0}^{\infty} (-1)^n \cdot \frac{x^{2n}}{(2n)!} \text{\space dla \space} x \in R
+    \]
+}
+
+\section{Funkcje 2 zmiennych}
+\subsection{Znajdowanie granicy (sposób z t)}
+\vbox{
+    \[
+        \lim_{(x,y) \to (0,0)}(x^2 + y^2) \text{ctg} (3x^2 + 3y^2)
+    \]
+}
+\subsection{Obliczanie wartości przybliżonej}
+\vbox{
+    \[
+        \sqrt{5x - y^2} \partial
+    \]
+}
+\subsection{Wyznaczanie ekstermów}
+
+\end{document}
