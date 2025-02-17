@@ -139,11 +139,99 @@
     \]
 
 }
-\subsection{Inne przydatne własności}
+\subsection{Przydatne granice}
 \vbox{
+    \[
+        \lim_{x \to 0} \frac{\arcsin x}{x} = 1
+    \]
     \[
         \lim_{x \to 0} \frac{\sin x}{x} = 1
     \]
+    \[
+        \lim_{x \to 0} \frac{\text{arctg\space}x}{x} = 1
+    \]
+    \[
+        \lim_{x \to 0} \frac{\text{tg\space}x}{x} = 1
+    \]
+    \[
+        \lim_{x \to 0} \frac{\ln(1 + x)}{x} = 1
+    \]
+    \[
+        \lim_{x \to 0} \ln(x) = -\infty
+    \]
+    \[
+        \lim_{x \to 0} \frac{e^x - 1}{x} = 1
+    \]
+    \[
+        \lim_{x \to 0} \frac{1 - \cos x}{x} = \frac{1}{2}
+    \]
+    \[
+        \lim_{x \to 0} \frac{\log_{a}(1 + x)}{x} = log_{a}e
+    \]
+    \[
+        \lim_{x \to 0} \frac{a^x - 1}{x} = \ln a
+    \]
+    \[
+        \lim_{x \to \infty} (1 + \frac{a}{x})^x = e^a
+    \]
+    \[
+        \lim_{x \to \infty} \ln(x) = \infty
+    \]
+}
+\subsection{Przydatne wzory na pochodne}
+\vbox{
+    \[
+        f(x)=x^n \Rightarrow f'(x)=n \cdot x^{n-1}
+    \]
+    Ciekawe przykłady zastosowania:
+    \[
+        f(x)=\frac{1}{x}=x^{-1} \Rightarrow f'(x) = (-1) \cdot x^{-2} = -\frac{1}{x^2}
+    \]
+    \[
+        f(x)= \sqrt{x} = x^{\frac{1}{2}} \Rightarrow f'(x) = \frac{1}{2} \cdot x^{\frac{1}{2} - 1} 
+        = \frac{1}{2 \cdot \sqrt{x}}
+    \]
+    Te mniej typowe wzory:
+    \[
+        f(x)=a^x \Rightarrow f'(x)=a^x \cdot \ln a
+    \]
+    \[
+        f(x)=e^x \Rightarrow f'(x)=e^x
+    \]
+    \[
+        f(x)=\log_{a}x \Rightarrow f'(x)= \frac{log_{a}e}{x}
+    \]
+    \[
+        f(x)=\ln x \Rightarrow f'(x)=\frac{1}{x}
+    \]
+    \[
+        f(x)=\sin x \Rightarrow f'(x)=\cos x
+    \]
+    \[
+        f(x)=\cos x \Rightarrow f'(x)=-\sin x
+    \]
+    \[
+        f(x)=\text{tg\space}x \Rightarrow f'(x)=\frac{1}{\cos^2 x}
+    \]
+    \[
+        f(x)=\text{ctg\space}x \Rightarrow f'(x)=-\frac{1}{\sin^2 x}
+    \]
+    \[
+        f(x)=\arcsin x \Rightarrow f'(x)=\frac{1}{\sqrt{1-x^2}}
+    \]
+    \[
+        f(x)=\arccos x \Rightarrow f'(x)=-\frac{1}{\sqrt{1-x^2}}
+    \]
+    \[
+        f(x)=\text{arctg\space} x \Rightarrow f'(x)=\frac{1}{1+x^2}
+    \]
+    \[
+        f(x)=\text{arcctg\space} x \Rightarrow f'(x)=-\frac{1}{1+x^2}
+    \]
+}
+
+\subsection{Inne przydatne własności}
+\vbox{
     \[
         \text{tg}x = \frac{\sin x}{\cos x}
     \]
@@ -151,7 +239,6 @@
         \text{ctg}x = \frac{\cos x}{\sin x}
     \]
 }
-
 
 \section{Kryteria określające zbieżność}
 \vbox{
@@ -420,10 +507,187 @@
 }
 \subsection{Obliczanie wartości przybliżonej}
 \vbox{
+    Obliczmy wartość przybliżoną funkcji na przykładzie:
     \[
-        \sqrt{5x - y^2} \partial
+        f(x, y) = \sqrt{5x - y^2}
+    \]
+    \[
+        P = (1.04;-0.97) = (x, y)
+    \]
+    Przyjmujemy sobie punkt blisko naszego punku $P$:
+    \[
+        P_0 = (1; -1) = (x_0, y_0)
+    \]
+    Jeśli funkcja $f$ jest różniczkowalna w punkcie $(x_0,y_0)$ to możemy 
+    podać przybliżone wartości "blisko" punktu $(x_0, y_0)$. Jeśli nie rozumiecie
+    o co chodzi to pełen chill, zaraz wszystko się wyklaruje. Istnieje taki wzór:
+    \[
+        f(x, y) \simeq f(x_0, y_0) + f'x(x_0, y_0) \cdot \Delta x + f'y(x_0, y_0) \Delta y
+    \]
+    Wartości $\Delta x$ oraz $\Delta y$ to różnice współrzednych punktów $P$ i $P_0$, czyli:
+    \[
+        \Delta x = x - x_0 = 1.04 - 1 = 0.4
+    \]
+    \[
+        \Delta y = y - y_0 = -0.97 - (-1) = 0.3
     \]
 }
 \subsection{Wyznaczanie ekstermów}
+\vbox{
+    Wyznaczmy ekstrema lokalne poniższej funkcji.
+    \[
+        f(x, y) = x^2 - x^2y^3 + 3y^2 - 3y + 1
+    \]
+    Pierwszym krokiem w liczeniu ekstermów jest wyznaczenie dziedziny. Jak to zrobić
+    każdy mniej więcej powinien wiedzieć, dla każdej funkcji robi się to inaczej.
+    W przypadku naszej funkcji dziedzina to:
+    \[
+        (x, y) \in R^2
+    \]
+}
+\vbox{
+    Kolejnym krokiem jest sprawdzenie dla jakiego punktu/punktów zachodzi warunek konieczny.
+    Warunkiem koniecznym tego czy dany punkt, np. $(x_0, y_0)$ może być ekstremum lokalnym jest, że dla tego punktu
+    pochodna $x$-owa oraz pochodna $y$-owa muszą być równe 0.
+    \[
+        f'x(x_0, y_0) = 0
+    \]
+    \[
+        f'y(x_0, y_0) = 0
+    \]
+    W przypadku naszej funkcji te pochodne to:
+    \[
+        f'x(x, y) = 2x - 2xy^3
+    \]
+    \[
+        f'y(x, y) = -3x^2y^2 + 6y - 3
+    \]
+    Tworzymy układ równań z którego wynika:
+    \[
+        \begin{cases}
+            2x - 2xy^3 = 0 /:2\\
+            -3x^2y^2 + 6y - 3 = 0 /:3\\
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            x - xy^3 = 0 \Rightarrow x (1 - y^3) = 0\\
+            -x^2y^2 + 2y - 1 = 0\\
+        \end{cases}
+    \]
+    Z pierwszego równania otrzymujemy:
+    \[
+        x = 0 \lor 1 - y^3 = 0 \to y^3 = 1 \to y = 1
+    \]
+    Podstawiamy otrzymane wartości do drugiego równania:
+    \begin{list}{$\bullet$}{}
+        \item Dla $x = 0$: \\
+                \[
+                    2y - 1 = 0 \text{\space więc \space} y = \frac{1}{2}
+                \]
+                Otrzymujemy więc punkt $(0, \frac{1}{2})$.
+        \item Dla $y = 1$: \\
+        \[
+            -x^2 + 2 - 1 = 0 \text{\space więc \space} x = 1 \lor x = -1
+        \]
+        Otrzymujemy więc punkty $(1, 1)$ i $(-1, 1)$.
+    \end{list} 
+    Mamy więc 3 punkty, które będziemy musieli sprawdzić: $(0, \frac{1}{2})$, $(1, 1)$ i $(-1, 1)$.
+}
+\vbox{
+    Następnie musimy wyznacznyć 4 drugie pochodne, aby wypełnić nimi macierz Hessego,
+    zwaną również Hesjanem. W naszym przypadku nasze pochodne to:
+    \[
+        f''xx(x,y) = 2 - 2y^3
+    \]
+    \[
+        f''yy(x,y) = -6x^2y + 6
+    \]
+    \[
+        f''xy(x,y) = f''yx(x,y) = -6xy^2
+    \]
+    Ale czym jest Hesjan. Hesjan to macierz składająca się z drugich pochodnych
+    jakiejś funkcji. Macierz ta wygląda następująco:
+    \[
+        H(x_0, y_0) = \begin{bmatrix}
+            f''xx(x,y) & f''xy(x,y) \\
+            f''yx(x,y) & f''yy(x,y)
+        \end{bmatrix}
+    \]
+    Więc w naszym przypadku macierz ta wygląda następująco:
+    \[
+        H(x, y) = \begin{bmatrix}
+            2 - 2y^3 & -6xy^2 \\
+            -6xy^2 & -6x^2y + 6
+        \end{bmatrix}
+    \]
+    Macierz ta jest nam potrzebna do warunku wystarczającego istnienia ekstremum.
+    Warunek ten pozwala na podstawie wartości wyznacznika macierzy dla konkretnego
+    punktu określić, czy jest to ekstremum czy punkt siodłowy (coś co nie jest ekstremum).
+    Mamy 3 przypadki:
+    \begin{list}{$\bullet$}{}
+        \item $\det H(x, y) > 0$ $\to$ punkt jest ekstremum
+        \item $\det H(x, y) < 0$ $\to$ punkt jest punktem siodłowym
+        \item $\det H(x, y) = 0$ $\to$ nie da się określić za pomocą wyznacznika
+    \end{list}
+    Dodatkowo gdy określimy sobie, że punkt jest ekstremum to dla tego punktu:
+    \begin{list}{$\bullet$}{}
+        \item $f''xx(x,y) > 0$ $\to$ punkt jest minimum lokalnym
+        \item $f''xx(x,y) < 0$ $\to$ punkt jest maksimum lokalnym
+    \end{list}
+}
+\vbox{
+    Aby obliczyć wyznacznik macierzy 2x2 należy użyć wzoru:
+    \[
+        \det H(x, y) = \det \begin{bmatrix}
+            a & b \\
+            c & d
+        \end{bmatrix} = 
+        \begin{vmatrix}
+            a & b \\
+            c & d
+        \end{vmatrix} =
+        a \cdot d - b \cdot c
+    \]
+    Obliczmy sobie wyznacznik dla poszczególnych punktów.
+    \begin{list}{$\bullet$}{}
+        \item Dla punktu $(0, \frac{1}{2})$
+                \[
+                    \det H(0, \frac{1}{2}) =
+                    \begin{vmatrix}
+                        \frac{7}{4} & 0 \\
+                        0 & 6
+                    \end{vmatrix} = \frac{7}{4} \cdot 6 - 0 \cdot 0 = \frac{21}{2} > 0
+                \]
+                Wiemy, że w punkcie $(0, \frac{1}{2})$ jest ekstremum.
+                Widzimy również, że
+                \[
+                    f''xx(x,y) = \frac{7}{4} > 0
+                \]
+                więc punkt $(0, \frac{1}{2})$ jest minimum lokalnym.
+        \item Dla punktu $(1, 1)$
+                \[
+                    \det H(1, 1) =
+                    \begin{vmatrix}
+                        0 & -6 \\
+                        -6 & 0
+                    \end{vmatrix} = 0 \cdot 0 - (-6) \cdot (-6) = -36 < 0
+                \]
+                Wiemy, że w punkcie $(1, 1)$ jest punkt siodłowy.
+        \item Dla punktu $(-1, 1)$
+                \[
+                    \det H(-1, 1) =
+                    \begin{vmatrix}
+                        0 & 6 \\
+                        6 & 0
+                    \end{vmatrix} = 0 \cdot 0 - 6 \cdot 6 = -36 < 0
+                \]
+                Wiemy, że w punkcie $(-1, 1)$ jest punkt siodłowy.
+    \end{list}
+    \[
+        \lim_{t \to 0} \frac{\ln(t)}{\ln(\sin(t))}
+    \]
+}
+
+
 
 \end{document}
