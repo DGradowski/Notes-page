@@ -505,6 +505,45 @@
         \lim_{(x,y) \to (0,0)}(x^2 + y^2) \text{ctg} (3x^2 + 3y^2)
     \]
 }
+\subsection{Pokazywanie, że granica nie istnieje}
+\vbox{
+    Weźmy sobie taki przykład:
+    \[
+        \lim_{(x,y) \to (0,0)}\frac{x^3y}{3x^4 + 2y^4}
+    \]
+    Musimy znaleźć takie 2 ciągi, które również będą dążyły do $(0,0)$. Jeśli nie rozumiesz
+    to spójrz na takie dwa przykładowe ciągi, których ty też możesz użyć dla dowolnego przypadku:
+    \[
+        (\frac{1}{n},\frac{1}{n}) \stackrel{n \to \infty}{\to} (0, 0)
+    \]
+    \[
+        (\frac{2}{n},\frac{1}{n}) \stackrel{n \to \infty}{\to} (0, 0)
+    \]
+    Możemy zauważyć, że tak na prawdę możemy użyć $\frac{x}{n}$ gdzie $x$ jest dowolną liczbą,
+    a $n$ dąży do nieskończoności. Gdy już wybraliśmy sobie ciągi sprawa jest giga
+    prosta. Podstawiamy sobie nasze ciągi do naszej funkcji:
+    \begin{list}{$\bullet$}{}
+        \item Dla $(\frac{1}{n},\frac{1}{n})$
+            \[
+                \lim_{(x,y) \to (0,0)}\frac{x^3y}{3x^4 + 2y^4} = 
+                \lim_{n \to \infty} \frac{\frac{1}{n^3} \cdot \frac{1}{n}}{\frac{3}{n^4} + \frac{2}{n^4}} =
+                \lim_{n \to \infty} \frac{\frac{1}{n^4}}{\frac{5}{n^4}}
+                = \frac{1}{5}
+            \]
+        \item Dla $(\frac{2}{n},\frac{1}{n})$
+            \[
+                \lim_{(x,y) \to (0,0)}\frac{x^3y}{3x^4 + 2y^4} =
+                \lim_{n \to \infty} \frac{\frac{8}{n^3} \cdot \frac{1}{n}}{\frac{3 \cdot 16}{n^4} + \frac{2}{n^4}} =
+                \frac{8}{50} = \frac{4}{25}
+            \]
+    \end{list}
+    Otrzymaliśmy 2 różne granice dlatego wiemy, że granica nie istnieje. 
+    Otrzymanie różnych granic w taki sposób udowadnia nam, że granica nie istnieje
+    \textbf{ ale otrzymanie w taki sposób takich samych granic nie gwarantuje, że granica istnieje.}
+    W nieskończonej ilości kombinacji ciągów, mogą się znaleźć 2 takie dla których wyjdą różne granice.
+}
+
+
 \subsection{Obliczanie wartości przybliżonej}
 \vbox{
     Obliczmy wartość przybliżoną funkcji na przykładzie:
@@ -526,11 +565,29 @@
     \]
     Wartości $\Delta x$ oraz $\Delta y$ to różnice współrzednych punktów $P$ i $P_0$, czyli:
     \[
-        \Delta x = x - x_0 = 1.04 - 1 = 0.4
+        \Delta x = x - x_0 = 1.04 - 1 = 0.4 = \frac{4}{100}
     \]
     \[
-        \Delta y = y - y_0 = -0.97 - (-1) = 0.3
+        \Delta y = y - y_0 = -0.97 - (-1) = 0.3 = \frac{3}{100}
     \]
+    Aby wyznaczyć $f'x(x_0, y_0)$ oraz $f'y(x_0, y_0)$ trzeba użyć reguły łańcuchowej opisanej
+    w rozdziale 2.3. Otrzymamy z tego:
+    \[
+        f'x(1, -1) = \frac{1}{2\sqrt{5x - y^2}} \cdot 5 = \frac{5}{2\sqrt{5 - 1}} = \frac{5}{4}
+    \]
+    \[
+        f'y(1, -1) = \frac{1}{2\sqrt{5x - y^2}} \cdot (-2y) = \frac{2}{2\sqrt{5 - 1}} = \frac{1}{2}
+    \]
+    Z kolei nasze $f(x_0, y_0)$ jest równe:
+    \[
+        f(1, -1) = \sqrt{5x - y^2} = \sqrt{5 - 1} = 2
+    \]
+    Podstawiając wszystkie wartości do wzoru na przybliżenie $f(x,y)$ otrzymujemy:
+    \[
+        f(x,y) \eqsim 2 + \frac{5}{4} \cdot \frac{4}{100} + \frac{1}{2} \cdot \frac{3}{100}
+        = 2 + \frac{10}{200} + \frac{3}{200} = 2 + \frac{13}{200} = 2.065
+    \]
+
 }
 \subsection{Wyznaczanie ekstermów}
 \vbox{
@@ -591,7 +648,7 @@
         \]
         Otrzymujemy więc punkty $(1, 1)$ i $(-1, 1)$.
     \end{list} 
-    Mamy więc 3 punkty, które będziemy musieli sprawdzić: $(0, \frac{1}{2})$, $(1, 1)$ i $(-1, 1)$.
+    Mamy więc 3 punkty (są to tak zwane punkty krytyczne), które będziemy musieli sprawdzić: $(0, \frac{1}{2})$, $(1, 1)$ i $(-1, 1)$.
 }
 \vbox{
     Następnie musimy wyznacznyć 4 drugie pochodne, aby wypełnić nimi macierz Hessego,
@@ -683,11 +740,6 @@
                 \]
                 Wiemy, że w punkcie $(-1, 1)$ jest punkt siodłowy.
     \end{list}
-    \[
-        \lim_{t \to 0} \frac{\ln(t)}{\ln(\sin(t))}
-    \]
 }
-
-
 
 \end{document}

@@ -1,24 +1,25 @@
-\contentsline {section}{\numberline {1}Prolog}{2}{section.1}%
-\contentsline {section}{\numberline {2}Przydatne rzeczy do wszystkiego}{2}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Szeregi harmoniczne różnej krotności}{2}{subsection.2.1}%
-\contentsline {subsection}{\numberline {2.2}Wzór na $e$}{3}{subsection.2.2}%
-\contentsline {subsection}{\numberline {2.3}Reguła łańcuchowa}{5}{subsection.2.3}%
-\contentsline {subsection}{\numberline {2.4}Przydatne granice}{6}{subsection.2.4}%
-\contentsline {subsection}{\numberline {2.5}Przydatne wzory na pochodne}{7}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Inne przydatne własności}{8}{subsection.2.6}%
-\contentsline {section}{\numberline {3}Kryteria określające zbieżność}{8}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Kryterium Cauchy'ego}{8}{subsection.3.1}%
-\contentsline {subsection}{\numberline {3.2}Kryterium d'Alemberta}{9}{subsection.3.2}%
-\contentsline {subsection}{\numberline {3.3}Kryterium porównawcze}{10}{subsection.3.3}%
-\contentsline {subsection}{\numberline {3.4}Kryterium Leibniza}{11}{subsection.3.4}%
-\contentsline {section}{\numberline {4}Szeregi potęgowe}{11}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Kryterium Cauchy'ego - Hadamarda}{12}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Kryterium d'Alemberta (szeregi potęgowe)}{12}{subsection.4.2}%
-\contentsline {section}{\numberline {5}Rozwijanie funkcji w szereg}{13}{section.5}%
-\contentsline {subsection}{\numberline {5.1}Funkcja z kreską ułamkową}{14}{subsection.5.1}%
-\contentsline {subsection}{\numberline {5.2}Funkcja z logarytmen naturalnym}{15}{subsection.5.2}%
-\contentsline {subsection}{\numberline {5.3}Inne funkcje}{15}{subsection.5.3}%
-\contentsline {section}{\numberline {6}Funkcje 2 zmiennych}{15}{section.6}%
-\contentsline {subsection}{\numberline {6.1}Znajdowanie granicy (sposób z t)}{15}{subsection.6.1}%
-\contentsline {subsection}{\numberline {6.2}Obliczanie wartości przybliżonej}{16}{subsection.6.2}%
-\contentsline {subsection}{\numberline {6.3}Wyznaczanie ekstermów}{16}{subsection.6.3}%
+\contentsline {section}{\numberline {1}Prolog}{3}{section.1}%
+\contentsline {section}{\numberline {2}Przydatne rzeczy do wszystkiego}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Szeregi harmoniczne różnej krotności}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Wzór na $e$}{4}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Reguła łańcuchowa}{6}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Przydatne granice}{7}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Przydatne wzory na pochodne}{8}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Inne przydatne własności}{9}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Kryteria określające zbieżność}{9}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Kryterium Cauchy'ego}{9}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Kryterium d'Alemberta}{10}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Kryterium porównawcze}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Kryterium Leibniza}{12}{subsection.3.4}%
+\contentsline {section}{\numberline {4}Szeregi potęgowe}{12}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Kryterium Cauchy'ego - Hadamarda}{13}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Kryterium d'Alemberta (szeregi potęgowe)}{13}{subsection.4.2}%
+\contentsline {section}{\numberline {5}Rozwijanie funkcji w szereg}{14}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Funkcja z kreską ułamkową}{15}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Funkcja z logarytmen naturalnym}{16}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Inne funkcje}{16}{subsection.5.3}%
+\contentsline {section}{\numberline {6}Funkcje 2 zmiennych}{16}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Znajdowanie granicy (sposób z t)}{16}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Pokazywanie, że granica nie istnieje}{17}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Obliczanie wartości przybliżonej}{18}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Wyznaczanie ekstermów}{19}{subsection.6.4}%

@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1739821061.77921 "e:/Projekciki/Stronka/docs/sem2/analiza-matematyczna2/ultimate-notatka/analizka2-notateczka.tex" "analizka2-notateczka.pdf" "analizka2-notateczka" 1739821062.63577 0
+["pdflatex"] 1739995561.80405 "e:/Projekciki/Stronka/docs/sem2/analiza-matematyczna2/ultimate-notatka/analizka2-notateczka.tex" "analizka2-notateczka.pdf" "analizka2-notateczka" 1739995562.66933 0
   "C:/Program Files/MikTeX/fonts/tfm/jknappen/ec/ecbx1095.tfm" 993061956 3228 aacd2ac2d814480e4422ad7e830fd2d4 ""
   "C:/Program Files/MikTeX/fonts/tfm/jknappen/ec/ecbx1200.tfm" 993061958 3200 b8d69bc738e5ef3e08cefeef3109ff56 ""
   "C:/Program Files/MikTeX/fonts/tfm/jknappen/ec/ecbx1440.tfm" 993061960 3196 0b37fa3083e15c57cfa8c4ff52f2807a ""
@@ -38,6 +38,7 @@
   "C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247596667 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
+  "C:/Program Files/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1247596673 34694 870c211f62cb72718a00e353f14f254d ""
   "C:/Program Files/MikTeX/tex/generic/atbegshi/atbegshi.sty" 1575571100 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
   "C:/Program Files/MikTeX/tex/generic/bigintcalc/bigintcalc.sty" 1576433602 40635 c40361e206be584d448876bba8a64a3b ""
   "C:/Program Files/MikTeX/tex/generic/bitset/bitset.sty" 1575926576 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
@@ -91,11 +92,11 @@
   "C:/Users/dgrad/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1200.pk" 1739484936 28440 c7aafccc4ce44491d3b15e66d0474603 ""
   "C:/Users/dgrad/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrm1728.pk" 1739484937 42516 b7471d578ac29bb443585bb8a4a82f44 ""
   "C:/Users/dgrad/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1739482514 12007728 983dbe111d742d2f806e5abd9383588f ""
-  "analizka2-notateczka.aux" 1739821062 3274 1cfd43e54f10fadbd156be482ced8f03 "pdflatex"
-  "analizka2-notateczka.out" 1739821062 4344 e84f17b12c5fe224d11b499a0f92653f "pdflatex"
-  "analizka2-notateczka.tex" 1739821061 25647 11d2f3cdc9ebda0712bda889c2326770 ""
-  "analizka2-notateczka.toc" 1739821062 2127 e49aef173f6247da2b9f6709da525fce "pdflatex"
-  "e:/Projekciki/Stronka/docs/sem2/analiza-matematyczna2/ultimate-notatka/analizka2-notateczka.tex" 1739821061 25647 11d2f3cdc9ebda0712bda889c2326770 ""
+  "analizka2-notateczka.aux" 1739995562 3420 ec06be9afec6c19277299fac35e3d9dd "pdflatex"
+  "analizka2-notateczka.out" 1739995562 4597 5dc7451d465c98901671e6a0232a3d74 "pdflatex"
+  "analizka2-notateczka.tex" 1739995561 28326 83f9de9677d16462ce96835e71c64ae8 ""
+  "analizka2-notateczka.toc" 1739995562 2232 320487679e821f8203f37d66ffc2f2ef "pdflatex"
+  "e:/Projekciki/Stronka/docs/sem2/analiza-matematyczna2/ultimate-notatka/analizka2-notateczka.tex" 1739995561 28326 83f9de9677d16462ce96835e71c64ae8 ""
   (generated)
   "analizka2-notateczka.aux"
   "analizka2-notateczka.log"
