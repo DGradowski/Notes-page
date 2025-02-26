@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.13)  19 FEB 2025 21:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.13)  26 FEB 2025 22:25
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -261,15 +261,15 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 12.
  (C:\Program Files\MikTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) (analizka2-notateczka.toc)
+) (analizka2-notateczka.toc
+
+[1
+
+{C:/Users/dgrad/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `analizka2-notateczka.toc'.
 
 
-
-[1
-
-{C:/Users/dgrad/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
 
 [2]
 
@@ -326,12 +326,12 @@ Overfull \hbox (14.86536pt too wide) in paragraph at lines 351--352
 
 
 [12]
-Overfull \hbox (2.6437pt too wide) in paragraph at lines 379--383
+Overfull \hbox (2.6437pt too wide) in paragraph at lines 384--388
 \T1/cmr/m/n/10.95 Kryterium to okre±la promie« zbie»no±ci sz-eregu pot¦-gowego. Jest ono bardzo
  []
 
 
-Overfull \hbox (0.34972pt too wide) in paragraph at lines 398--400
+Overfull \hbox (0.34972pt too wide) in paragraph at lines 403--405
 \T1/cmr/m/n/10.95 Tak jak wyko-rzys-tal-i±my kry-terium Cauchy'ego tak bli¹-ni-aczo mo»emy wyko-
  []
 
@@ -346,60 +346,62 @@ Overfull \hbox (0.34972pt too wide) in paragraph at lines 398--400
 [16]
 
 [17]
-Overfull \hbox (0.41054pt too wide) in paragraph at lines 606--609
+
+[18]
+Overfull \hbox (0.41054pt too wide) in paragraph at lines 636--639
 []\T1/cmr/m/n/10.95 Kolejnym krok-iem jest sprawdze-nie dla jakiego punktu/punktów za-chodzi
  []
 
 
-Overfull \hbox (3.01564pt too wide) in paragraph at lines 606--609
+Overfull \hbox (3.01564pt too wide) in paragraph at lines 636--639
 \T1/cmr/m/n/10.95 warunek konieczny. Warunk-iem koniecznym tego czy dany punkt, np. $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 640--641
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 645--646
+Underfull \hbox (badness 10000) in paragraph at lines 675--676
 
- []
-
-
-
-[18]
-Overfull \hbox (1.20947pt too wide) in paragraph at lines 679--684
-\T1/cmr/m/n/10.95 stremum. Warunek ten pozwala na pod-stawie warto±ci wyz-nacznika macierzy
  []
 
 
 
 [19]
+Overfull \hbox (1.20947pt too wide) in paragraph at lines 709--714
+\T1/cmr/m/n/10.95 stremum. Warunek ten pozwala na pod-stawie warto±ci wyz-nacznika macierzy
+ []
+
+
 
 [20]
 
 [21]
 
-[22] (analizka2-notateczka.aux)
+[22]
+
+[23] (analizka2-notateczka.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `analizka2-notateczka.out' has not changed.
-(rerunfilecheck)             Checksum: 5DC7451D465C98901671E6A0232A3D74;4597.
+(rerunfilecheck)             Checksum: 9FB529B27A04ABE9CE5B5BD8667DFAA8;4820.
  ) 
 Here is how much of TeX's memory you used:
- 9260 strings out of 473530
- 139037 string characters out of 5724861
+ 9263 strings out of 473530
+ 139074 string characters out of 5724861
  539740 words of memory out of 5000000
- 32341 multiletter control sequences out of 15000+600000
+ 32342 multiletter control sequences out of 15000+600000
  571963 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,628b,441s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,628b,474s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on analizka2-notateczka.pdf (22 pages, 283630 bytes).
+Output written on analizka2-notateczka.pdf (23 pages, 287455 bytes).
 PDF statistics:
- 593 PDF objects out of 1000 (max. 8388607)
- 52 named destinations out of 1000 (max. 500000)
- 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 604 PDF objects out of 1000 (max. 8388607)
+ 54 named destinations out of 1000 (max. 500000)
+ 209 words of extra memory for PDF output out of 10000 (max. 10000000)
 

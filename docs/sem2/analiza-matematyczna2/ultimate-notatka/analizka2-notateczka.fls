@@ -139,8 +139,8 @@ INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmsy10.tfm
 INPUT C:\Program Files\MikTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MikTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
-OUTPUT analizka2-notateczka.toc
 INPUT C:\Users\dgrad\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+OUTPUT analizka2-notateczka.toc
 INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecrm0800.tfm
 INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecbx1200.tfm
 INPUT C:\Program Files\MikTeX\fonts\tfm\jknappen\ec\ecrm0600.tfm
