@@ -22,10 +22,6 @@
     czytelnicy tej notatki, ponieważ jestem dowodem na to, że nawet z najgorszych
     sytuacji da się wyjść obronną ręką.
 }
-\vbox{
-    Miejsce na wytłumaczenie z czego będzie się składać notatka.
-}
-
 
 \section{Przydatne rzeczy do wszystkiego}
 \subsection{Szeregi harmoniczne różnej krotności}
@@ -349,11 +345,6 @@
     \end{enumerate}
     \textbf{UWAGA! Trzeba pamiętać, że określa to wyłącznie zbieżność warunkową
     szeregu a nie bezwzględną!}
-}
-
-\subsection{Kryterium Maclaurina (całkowe)}
-\vbox{
-    
 }
 
 \section{Szeregi potęgowe}
@@ -771,5 +762,89 @@
                 Wiemy, że w punkcie $(-1, 1)$ jest punkt siodłowy.
     \end{list}
 }
+\section{Kartkówka nr 1}
+Kartkówka pierwsza składa się z 2 zadań. Pierwsze zadanie polega na zbadaniu zbieżności szeregu, stosując
+kryteria Cauchy'ego oraz d'Alemberta.
 
+Drugie zadanie polega na zbadadaniu czy dany szereg jest zbieżny warunkowo czy bezwzględnie.
+
+Poniżej zamieszczę wszystkie kartkówki jakie przerobiłem ucząć się do poprawy kartkówki, ale tylko jedno wytłumaczę dokładnie.
+Gdyby ktoś chciał rozwiązania proszę do mnie napisać to mogę podesłać.
+
+\subsection{Kartkówka wraz z dokładnym omówieniem}
+\subsubsection{Zadanie 1}
+Stosując odpowiednie kryterium zbadać zbieżność szeregu liczbowego
+\[
+    \text{a) } \sum_{n = 1}^{\infty}\frac{2^n \cdot 3^{2n - 1}}{4^{2n + 1}} \text{ oraz }
+    \text{b) }\sum_{n = 1}^{\infty}(\frac{2n - 1}{2n + 3})^{3n^2}
+\]
+
+\subsubsection{Zadanie 2}
+Stwierdzić (uzasadniając) czy szereg
+\[
+    \sum_{n = 1}^{\infty} (-1)^n \frac{3n + 1}{2n^2 - n}
+\]
+jest zbieżny bezwzględnie czy warunkowo.
+
+\subsubsection{Zadanie 1 (rozwiązanie)}
+W tym zadaniu we wszystkich kartkówkach jakie do tej pory przerabiałem zawsze trzeba było użyć raz
+kryterium Cauchy'ego i raz d'Alemberta. Filipczak bardzo chciał byście napisali nazwę
+kryterium z jakiego korzystacie i super by było jakbyście ją napisali poprawnie.
+\begin{list}{}{}
+    \item[a)]{
+        W tym przypadku najlepiej będzie użyć \hyperlink{subsection.3.2}{kryterium d'Alemberta opisanego w sekcji 3.2}. Skąd taki wniosek?
+        A stąd, że w podpunkcie b) będziemy korzystać z Cauchy'ego, a kiedyś musimy kryterium d'Alemberta użyć.
+        Nasz przykład wyglądał następująco:
+        \[
+            \sum_{n = 1}^{\infty}\frac{2^n \cdot 3^{2n - 1}}{4^{2n + 1}}
+        \]
+        Przypomnijmy sobie szybko wzór na $g$. Warto zauważyć, że można ominąć wartość
+        bezględną we wzorze ponieważ wszystkie wyrazy (czy jak to tam nazwać) szeregu są dodatnie:
+        \[
+            g = \lim_{n\to\infty}{\left\lvert \frac{a_{n + 1}}{a_n} \right\rvert}
+            =  \lim_{n\to\infty}{ \frac{a_{n + 1}}{a_n} }
+        \]
+        Ja dla ułatwienia osobno upraszczam sobie $a^n$ oraz $a^{n + 1}$. Otrzymujemy więc:
+        \[
+            a^n = \frac{2^n \cdot 3^{2n - 1}}{4^{2n + 1}}=\frac{2^n \cdot 3^{2n} \cdot \frac{1}{3}}{4^{2n} \cdot 4}
+        \]
+        \[
+            a^{n + 1} = \frac{2^{n + 1} \cdot 3^{2(n + 1) - 1}}{4^{2(n + 1) + 1}}=\frac{2^n \cdot 2 \cdot 3^{2n} \cdot 3}{4^{2n} \cdot 4^3}
+        \]
+        Podstawiając wartości te do wzoru na $g$ otrzymujemy:
+        \[
+            g =  \lim_{n\to\infty}{ \frac{a_{n + 1}}{a_n} }
+            = \frac{2^n \cdot 2 \cdot 3^{2n} \cdot 3}{4^{2n} \cdot 4^3} \cdot \frac{4^{2n} \cdot 4}{2^n \cdot 3^{2n} \cdot \frac{1}{3}}
+            = \frac{18}{16} = \frac{9}{8} > 1
+        \]
+        a więc na mocy d'Alemberta szereg jest rozbieżny.
+    }
+    \item[b)]{
+        Jeśli w szeregu widzimy, że całość jest podniesiona do $n$'tej
+        potęgi to najprawdopodobniej należy użyć \hyperlink{subsection.3.1}{kryterium Cauchy'ego opisanego w sekcji 3.1}.
+        W podpunkcie w którym należy użyć tego kryterium ważne będzie również użycie \hyperlink{subsection.2.2}{wzoru na $e$ opisanego w sekcji 2.2}.
+        Przypomnijmy sobie nasz przykład:
+        \[
+            \sum_{n = 1}^{\infty}(\frac{2n - 1}{2n + 3})^{3n^2}
+        \]
+        Kryterium Cauchy'ego stosujemy ponieważ nasza $n$'ta potęga pięknie nam się skraca z 
+        $n$'tym pierwiastkiem. Tutaj również można zignorować wartość bezwzględną z tego samego powodu
+        co w podpunkcie a).
+        \[
+            g = \lim_{n\to\infty}{\sqrt[n]{\left\lvert a_n \right\rvert}} = 
+            \lim_{n\to\infty}{\sqrt[n]{(\frac{2n - 1}{2n + 3})^{3n^2}}}
+            = \lim_{n\to\infty}(\frac{2n - 1}{2n + 3})^{3n}
+        \]
+        Tutaj odsyłam do \hyperlink{subsection.2.2}{sekcji z wzorem na $e$} ponieważ to jest za dużo pisania by
+        krok po kroku to rozpisywać po raz kolejny. Mogę powiedzieć tylko, że:
+        \[
+            g = e^{-6} < 0
+        \]
+        więc na mocy kryterium Cauchy'ego szereg ten jest zbieżny.
+    }
+\end{list}
+
+\subsubsection{Zadanie 2 (rozwiązanie)}
+Dokończę w wolnej chwili, można mnie poganiać z robotą jak zapomnę. Jak ktoś chce link do onenote'a z rozwiązaniami
+to pisać pw na discordzie lub messengerze i ładnie poprosić to dam.
 \end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.13)  26 FEB 2025 22:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.13)  31 MAR 2025 00:08
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -274,19 +274,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [2]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 48.
+(hyperref)                removing `math shift' on input line 44.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 48.
+(hyperref)                removing `math shift' on input line 44.
 
 
-Overfull \hbox (4.09708pt too wide) in paragraph at lines 61--63
+Overfull \hbox (4.09708pt too wide) in paragraph at lines 57--59
 \T1/cmr/m/n/10.95 W trak-cie stosowa-nia kry-terium Cauchy'ego otrzy-mu-jemy nast¦pu-j¡c¡ posta¢: 
  []
 
 
-Overfull \hbox (37.02316pt too wide) detected at line 77
+Overfull \hbox (37.02316pt too wide) detected at line 73
 []\OT1/cmr/m/n/10.95 ([])[] = []([])[] = []([] + [])[] = [](1 + [])[]
  []
 
@@ -295,12 +295,12 @@ Overfull \hbox (37.02316pt too wide) detected at line 77
 [3]
 
 [4]
-Overfull \hbox (6.84984pt too wide) in paragraph at lines 104--108
+Overfull \hbox (6.84984pt too wide) in paragraph at lines 100--104
 \T1/cmr/m/n/10.95 Reguªa ªa«cu-chowa to jedno z pod-sta-wowych narz¦dzi rachunku ró»niczkowego
  []
 
 
-Overfull \hbox (9.28804pt too wide) in paragraph at lines 104--108
+Overfull \hbox (9.28804pt too wide) in paragraph at lines 100--104
 \T1/cmr/m/n/10.95 (liczenia pochod-nych), które pozwala na licze-nie pochod-nych funkcji zªo»onych.
  []
 
@@ -319,19 +319,19 @@ Overfull \hbox (9.28804pt too wide) in paragraph at lines 104--108
 [10]
 
 [11]
-Overfull \hbox (14.86536pt too wide) in paragraph at lines 351--352
+Overfull \hbox (14.86536pt too wide) in paragraph at lines 347--348
 \T1/cmr/bx/n/10.95 UWAGA! Trzeba pami¦-ta¢, »e okre±la to wyª¡cznie zbie»no±¢ warunk-
  []
 
 
 
 [12]
-Overfull \hbox (2.6437pt too wide) in paragraph at lines 384--388
+Overfull \hbox (2.6437pt too wide) in paragraph at lines 375--379
 \T1/cmr/m/n/10.95 Kryterium to okre±la promie« zbie»no±ci sz-eregu pot¦-gowego. Jest ono bardzo
  []
 
 
-Overfull \hbox (0.34972pt too wide) in paragraph at lines 403--405
+Overfull \hbox (0.34972pt too wide) in paragraph at lines 394--396
 \T1/cmr/m/n/10.95 Tak jak wyko-rzys-tal-i±my kry-terium Cauchy'ego tak bli¹-ni-aczo mo»emy wyko-
  []
 
@@ -348,29 +348,29 @@ Overfull \hbox (0.34972pt too wide) in paragraph at lines 403--405
 [17]
 
 [18]
-Overfull \hbox (0.41054pt too wide) in paragraph at lines 636--639
+Overfull \hbox (0.41054pt too wide) in paragraph at lines 627--630
 []\T1/cmr/m/n/10.95 Kolejnym krok-iem jest sprawdze-nie dla jakiego punktu/punktów za-chodzi
  []
 
 
-Overfull \hbox (3.01564pt too wide) in paragraph at lines 636--639
+Overfull \hbox (3.01564pt too wide) in paragraph at lines 627--630
 \T1/cmr/m/n/10.95 warunek konieczny. Warunk-iem koniecznym tego czy dany punkt, np. $\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 x[]; y[]\OT1/cmr/m/n/10.95 )$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 670--671
+Underfull \hbox (badness 10000) in paragraph at lines 661--662
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 675--676
+Underfull \hbox (badness 10000) in paragraph at lines 666--667
 
  []
 
 
 
 [19]
-Overfull \hbox (1.20947pt too wide) in paragraph at lines 709--714
+Overfull \hbox (1.20947pt too wide) in paragraph at lines 700--705
 \T1/cmr/m/n/10.95 stremum. Warunek ten pozwala na pod-stawie warto±ci wyz-nacznika macierzy
  []
 
@@ -381,27 +381,41 @@ Overfull \hbox (1.20947pt too wide) in paragraph at lines 709--714
 [21]
 
 [22]
+Overfull \hbox (2.69006pt too wide) in paragraph at lines 769--770
+[]\T1/cmr/m/n/10.95 Drugie zadanie polega na zbadada-niu czy dany sz-ereg jest zbie»ny warunk-
+ []
 
-[23] (analizka2-notateczka.aux)
+
+
+[23]
+Overfull \hbox (11.02327pt too wide) in paragraph at lines 795--798
+[]\T1/cmr/m/n/10.95 W tym przy-padku na-jlepiej b¦dzie u»y¢ []kry-terium d'Alemberta opisanego
+ []
+
+
+
+[24]
+
+[25] (analizka2-notateczka.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `analizka2-notateczka.out' has not changed.
-(rerunfilecheck)             Checksum: 9FB529B27A04ABE9CE5B5BD8667DFAA8;4820.
+(rerunfilecheck)             Checksum: 778BE0F027C78AFEC3608053BC9C8747;5612.
  ) 
 Here is how much of TeX's memory you used:
- 9263 strings out of 473530
- 139074 string characters out of 5724861
- 539740 words of memory out of 5000000
- 32342 multiletter control sequences out of 15000+600000
+ 9275 strings out of 473530
+ 139268 string characters out of 5724861
+ 539751 words of memory out of 5000000
+ 32347 multiletter control sequences out of 15000+600000
  571963 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,628b,474s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,628b,526s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on analizka2-notateczka.pdf (23 pages, 287455 bytes).
+Output written on analizka2-notateczka.pdf (25 pages, 300430 bytes).
 PDF statistics:
- 604 PDF objects out of 1000 (max. 8388607)
- 54 named destinations out of 1000 (max. 500000)
- 209 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 651 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 249 words of extra memory for PDF output out of 10000 (max. 10000000)
 
