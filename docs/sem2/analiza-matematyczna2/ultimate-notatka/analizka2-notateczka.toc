@@ -22,7 +22,7 @@
 \contentsline {subsection}{\numberline {6.1}Znajdowanie granicy (sposób z t)}{17}{subsection.6.1}%
 \contentsline {subsection}{\numberline {6.2}Pokazywanie, że granica nie istnieje}{18}{subsection.6.2}%
 \contentsline {subsection}{\numberline {6.3}Obliczanie wartości przybliżonej}{19}{subsection.6.3}%
-\contentsline {subsection}{\numberline {6.4}Wyznaczanie ekstermów}{20}{subsection.6.4}%
+\contentsline {subsection}{\numberline {6.4}Wyznaczanie ekstremów}{20}{subsection.6.4}%
 \contentsline {section}{\numberline {7}Kartkówka nr 1}{23}{section.7}%
 \contentsline {subsection}{\numberline {7.1}Kartkówka wraz z dokładnym omówieniem}{24}{subsection.7.1}%
 \contentsline {subsubsection}{\numberline {7.1.1}Zadanie 1}{24}{subsubsection.7.1.1}%
