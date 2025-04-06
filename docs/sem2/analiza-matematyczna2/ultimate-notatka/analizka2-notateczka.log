@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.13)  31 MAR 2025 00:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2025.2.13)  6 APR 2025 14:56
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -396,26 +396,44 @@ Overfull \hbox (11.02327pt too wide) in paragraph at lines 795--798
 
 [24]
 
-[25] (analizka2-notateczka.aux)
+[25]
+Overfull \hbox (4.67043pt too wide) in paragraph at lines 880--885
+[]\T1/cmr/m/n/10.95 Udawadnianie zbie»no±ci bezwzgl¦d-nej jest zadaniem bardzo prostym
+ []
+
+
+Overfull \hbox (3.30832pt too wide) in paragraph at lines 880--885
+\T1/cmr/m/n/10.95 wszys-t-kich przy-pad-kach u»y-waªem []kry-terium porów-nawczego opisanego
+ []
+
+
+
+[26]
+
+[27]
+
+[28]
+
+[29] (analizka2-notateczka.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `analizka2-notateczka.out' has not changed.
-(rerunfilecheck)             Checksum: 778BE0F027C78AFEC3608053BC9C8747;5612.
+(rerunfilecheck)             Checksum: EA0524D1CC23FD7D21A8A94750C8165B;7874.
  ) 
 Here is how much of TeX's memory you used:
- 9275 strings out of 473530
- 139268 string characters out of 5724861
- 539751 words of memory out of 5000000
- 32347 multiletter control sequences out of 15000+600000
+ 9311 strings out of 473530
+ 139896 string characters out of 5724861
+ 539755 words of memory out of 5000000
+ 32363 multiletter control sequences out of 15000+600000
  571963 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,628b,526s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,11n,79p,628b,536s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1200.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm0800.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1095.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1095.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx1440.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1200.pk> <C:\Users\dgrad\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm1728.pk><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MikTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on analizka2-notateczka.pdf (25 pages, 300430 bytes).
+Output written on analizka2-notateczka.pdf (29 pages, 321234 bytes).
 PDF statistics:
- 651 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 249 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 759 PDF objects out of 1000 (max. 8388607)
+ 81 named destinations out of 1000 (max. 500000)
+ 377 words of extra memory for PDF output out of 10000 (max. 10000000)
 
