@@ -1,0 +1,56 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath, amssymb, amsthm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{listings}
+
+\title{Wbudy do budy}
+\author{Dawid Gradowski (puckmoment na dc)}
+\date{Luty 2025}
+\begin{document}
+\maketitle
+\renewcommand\contentsname{Spis treści}
+\tableofcontents
+\newpage
+\section{Prolog}
+Notatki robione w oparciu o projekt, który robiłem sam na zajęciach (Licznik jak coś).
+
+\begin{center}
+    \begin{tabular}{ |c|c|c| }
+        \hline
+        \multicolumn{3}{|c|}{Komponenciki}\\
+        \hline
+        Płytka & LPC1768/9 & Intrukcja \\ 
+        \hline
+        Ekran OLED & Rodzaj & Intrukcja \\
+        \hline
+        Termometr & LM75 & Instrukcja \\
+        \hline  
+    \end{tabular}
+\end{center}
+\section{GPIO}
+\subsection{Guziczki}
+
+\section{SPI}
+\subsection{Wyświetlacz}
+\subsection{Zapis na kartę pamięci}
+
+\section{I$^2$C}
+\subsection{Czujnik natężenia światła}
+\subsection{Termometr}
+W przypadku termomemetru LM75 adres jest ustalany następująco:
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|}
+        \hline
+         & & & & $A_2$ & $A_1$ & $A_0$\\
+        \hline
+        1& 0& 0& 1& X & X & X\\
+        \hline
+    \end{tabular}
+\end{center}
+Pierwsze 4 bity są odczytane z instrukcji. Bity oznaczone $A_x$ są ustalane
+zależnie od termometra na podstawie lutowania. Jeśli $A_x$ jest przylutowany
+do gruntu (ground) to w adresie mamy 0, a jeśli do $+V_S$ to 1.
+\section{RTC}
+\end{document}
