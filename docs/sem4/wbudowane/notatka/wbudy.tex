@@ -30,9 +30,39 @@ Notatki robione w oparciu o projekt, który robiłem sam na zajęciach (Licznik 
     \end{tabular}
 \end{center}
 \section{GPIO}
+\subsection{Informacje ogólne}
+\textbf{GPIO} (General Purpose Input/Output) jest interfejsem, który 
+możemy wykorzystać zarówno jako wejście jak i wyjście. To jak zachowuje się 
+ten interfejs zależne jest od stanu Enable Line. Jeśli stan Enable Line jest
+1 to interfejs robi za wejście, a jeśli 0 to robi za wyjście.
 \subsection{Guziczki}
 
 \section{SPI}
+\subsection{Informacje ogólne}
+SPI jest szeregowym interfejsem urządzeń peryferyjnych. Jest nazywany
+protokołem master-slave. Za mastera uznaje się kontroler i jest on zawsze
+jeden a funkcję slave pełni urządzenie peryfejryne, które musi być jedno bądź więcej.
+Każde połączenie między masterem a slavem ma do 4 kabli, które są odpowiedzialne
+za 4 różne sygnały logiczne (logic signals). Te sygnały to:
+\begin{itemize}
+    \item {
+        \textbf{CS / SS} (Chip Select lub Slave Select) - odpowiada za wybór 
+        urządzenia do komunikacji
+    }
+    \item {
+        \textbf{SCLK} (Synchronous Clock) - odpowiada za synchronizacje i timing(?)
+    }
+    \item {
+        \textbf{MOSI} (Master Out Slave In) - dane przesyłane
+        przez mastera
+    }
+    \item {
+        \textbf{MISO} (Master In Slave Out) - dane odbierane przez
+        mastera
+    }
+\end{itemize}
+
+
 \subsection{Wyświetlacz}
 \subsection{Zapis na kartę pamięci}
 
