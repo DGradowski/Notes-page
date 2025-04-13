@@ -7,6 +7,10 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{graphicx}
+\usepackage[UTF8]{ctex}
+
+\renewcommand{\figurename}{Rysunek}
+\renewcommand{\tablename}{Tabela}
 
 \graphicspath{{./img}}
 
@@ -107,6 +111,7 @@ do pinu oznaczonego numerem 3 i nadaje sygnał wysoki (1). Wtedy nasza tabelka b
         FIODIR & 0 & 0 & 0 & 0 \\ \hline
     \end{tabular}
 \end{table}
+\newpage
 Jako iż wszystkie bity w FIODIR są ustawione na 0, to żaden z naszych pinów nie jest
 wyjściem więc nie możemy zmieniać wartości na pinach. Aby zmienić wartość na konkretnym bicie
 możemu użyć następującej funkcji:
@@ -128,7 +133,6 @@ void GPIO_SetDir(uint8_t port, uint32_t bitValue, uint8_t dir)
 	}
 }
 \end{lstlisting}
-\newpage
 Jeśli chcielibyśmy na przykład używać pinu 2 jako wyjścia to wartość binarna
 w rejestrze FIODIR musi wyglądać następująco $0100$ co jest równe 4 w dziesiętnym.
 Z tą wiedzą wiemy, że bit ten możemy zmienić wywołująć funkcję na jeden z poniższych sposobów:
@@ -182,6 +186,7 @@ GPIO_SetValue(0, (1 << 2)); // preferowany
 GPIO_SetValue(0, 0x4);
 GPIO_SetValue(0, 4);
 \end{lstlisting}
+\newpage
 Po wykonaniu tej funkcji wartości w rejestrach będą wyglądały następująco:
 \begin{table}[H]
     \centering
@@ -212,7 +217,7 @@ nie ma sensu odczytywać wartości z rejestrów FIOSET i FIOCLR bo w większośc
 będą one równe 0. Metoda FIOCLR działa w ten sam sposób więc nie będę jej tłumaczył.
 Zarówno FIOSET jak i FIOCLR nie zadziałają na piny, dla których odpowiadające im wartości
 w rejestrze FIODIR są równe 0.
-
+\newpage
 Aby odczytać wartości z rejestru FIOPIN należy użyć następującej funkcji:
 \begin{lstlisting}[language=c]
 uint32_t GPIO_ReadValue(uint8_t portNum)
@@ -226,7 +231,6 @@ uint32_t GPIO_ReadValue(uint8_t portNum)
 	return (0);
 }
 \end{lstlisting}
-\newpage
 Dana funkcja odczytuje jednak całą wartość rejestru a nie pojedynczego bitu.
 Jęśli chcemy napisać warunek zależny od tego czy mamy na bicie 3 wartość niską bądź
 wysoką, to możemy to napisać na parę sposobów:
@@ -290,7 +294,7 @@ Mamy już w zasięgu palca nasz przycisk gotowy do wciśnięcia, znamy już adre
 dany przycisk wpływa, pozostało tylko zaprogramować jakąś funkcjonalność. 
 Przyciski jeśli chodzi o nadawany sygnał są bardzo nieintuicyjne, ponieważ niewciśnięty
 przycisk daje na wyjściu 1, a wciśnięty daje 0. 
-\newpage
+
 W instrukcji warunkowej możemy przycisków użyć w następujący sposób.
 \begin{lstlisting}
 if ((GPIO_ReadValue(0) & (1 << 4)) == 0) {
@@ -311,9 +315,13 @@ z przycisku.}
 
 \section{SPI}
 \subsection{Informacje ogólne}
+To o czym będę mówił jest dość spoko wytłumaczone w tym filmiku: \href{https://www.youtube.com/watch?v=0nVNwozXsIc&ab_channel=Rohde%26Schwarz}{LINK}.
+
+
 SPI jest szeregowym interfejsem urządzeń peryferyjnych. Jest nazywany
 protokołem master-slave. Za mastera uznaje się kontroler i jest on zawsze
 jeden a funkcję slave pełni urządzenie peryfejryne, które musi być jedno bądź więcej.
+\subsubsection{Połączenia}
 Każde połączenie między masterem a slavem ma do 4 kabli, które są odpowiedzialne
 za 4 różne sygnały logiczne (logic signals). Te sygnały to:
 \begin{itemize}
@@ -330,12 +338,100 @@ za 4 różne sygnały logiczne (logic signals). Te sygnały to:
     }
     \item {
         \textbf{MISO} (Master In Slave Out) - dane odbierane przez
-        mastera
+        mastera (opcjonalne)
     }
 \end{itemize}
+Z tego filmiku też kradne obrazki więc no. A więc wszystkie te sygnały są używane do komuniakcji.
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{SPI_communication.png}
+    \caption{Schemat komunikacji Master-Slave w interfejsie SPI}
+\end{figure}
+\subsubsection{SPI Modes}
+SPI może pracować w 4 różnych trybach, zależnych od CPOL (clock polarity) i
+CPHA (clock phase).
 
+CPOL (clock polarity) oznacza czy na linii SCLK jest domyślnie stan niski czy wysoki
+jak nie są wysyłane pakiety. Gdy CPOL jest równy 0 domyślną wartością jest wartość 0 (LOW),
+a gdy CPOL jest równy 1 to domyślną wartością jest wartość 1.
+
+CPHA (clock phase) oznacza czy dane są próbkowane gdy stan przechodzi z domyślnego na odwrotny (leading / first phase)
+lub z odwrotnego na domyślny (trailing / second phase). Jeśli CPHA jest ustawione na 0 to dane
+są próbkowane w fazie pierwszej, a jeśli 1 to w fazie drugiej.
+
+Wszystkie te własności mogą być opisane jako SPI mode według wzoru poniższej tabelki:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|}
+        \hline
+        SPI Mode & CPOL & CPHA \\
+        \hline
+        0 & 0 & 0 \\ \hline
+        1 & 0 & 1 \\ \hline
+        2 & 1 & 0 \\ \hline 
+        0 & 1 & 1 \\
+        \hline
+    \end{tabular}
+\end{table}
+Najczęściej stosowanym trybem jest tryb 0.
+
+\subsubsection{Łączenie wielu slave'ów}
+Wiele slave'ów może być podłączonych do jednego mastera na 2 różne sposoby.
+\begin{enumerate}
+    \item {
+        \textbf{Independend Slaves} - komunikacja z każdym urządzeniem podrzędnym 
+        może przebiegać niezależnie od innych urządzeń. Plus jest taki, że jest dość 
+        prosta w założeniu i na pewno taki sposób jest wspierany przez urządzenia podrzędne.
+        Minus jest taki, że nie jest to dobrze skalowalne się rozwiązanie bo każde dodatkowe
+        urządzenie potrzebuje dodatkowego połączenia CS.
+        \begin{figure}[H]
+            \includegraphics[width=\textwidth]{SPI_independent_slaves.png}
+            \caption{Schemat komunikacji Independend Slaves}
+        \end{figure}
+    }
+    \item {
+        \textbf{Cooperative Slaves / Daisy Chain} - komunikacja z wszystkimi urządzeniami
+        jest zależna od pozostałych urządzeń. Jeden sygnał CS mastera jest nadawany
+        na wszystkie slave'y. Sygnał MISO wychodzący z urządzeń podrzędnych
+        jest przekazywany do ścieżki MOSI kolejnego urządzenia podrzędnego, dopiero
+        sygnał z ostatniego urządzenia podrzędnego trafia to MISO mastera. Plusem jest to,
+        że skalowalność tego rozwiązania jest bardzo dobra (jedna ścieżka CS niezależnie od
+        ilości urządzeń podrzędnych). Minus jest taki, że tego typu komunikacja jest bardzo
+        skomplikowana i nie wszystkie urządzenia są z tym kompatybilne.
+        \begin{figure}[H]
+            \includegraphics[width=\textwidth]{SPI_cooperative_slaves.png}
+            \caption{Schemat komunikacji Cooperative Slaves}
+        \end{figure}
+    } 
+\end{enumerate}
 
 \subsection{Wyświetlacz}
+Jeśli wierzyć skryptowi to wymiary ekranu na płytce LPC1768 to \textbf{96x64 pikseli},
+ale sam kotroler może obsłużyć rozdzielczość do 132x64. Z tego co mówi chatGPT 
+większość wyświetlaczy może wykorzystywać zarówno I$^2$C jak i SPI. Nasza płytka 
+również może obsłużyć wyświetlacz za pomocą SPI oraz I$^2$C i widać to na schemacie znajdującym
+się w \hyperref[tab:tab1]{tabeli 1}.
+\begin{figure}[H]
+    \includegraphics[width=\textwidth]{OLED.png}
+    \caption{Schemat OLED}
+\end{figure}
+Teksty na rysunku są dość małe, ale to co najważniejsze wytłumaczę. Patrząc na ten
+schemat oraz na samą płytkę możemy wywnioskować z jakiego interfejsu korzysta nasza 
+płytka do komunikacji z wyświetlaczem. Jeden z większych tekstów na rysunku mówi:\newline
+Short: SPI \newline
+Open: I2C \newline
+Co oznacza mniej więcej tyle, że jak zwarte (short) to używamy SPI, a jak jest 
+otwarte to I$^2$C. Informacja ta odnosi się do punktu nazywanego jumper, który 
+akurat w naszym przypadku jest oznaczony jako J42. Najprawdopodobniej są to jakieś 2
+wystające piny, które można połączyć zworką.
+Biblioteka, która była w przykładowych projektach i odpowiada za komunikacje z 
+wyświetlaczem oled nazywa się oled.c. Jak ktoś chce dogłębnie poznać możliwości
+biblioteki to niech sobie tam zajrzy, ja opiszę tylko to z czego korzystam sam.
+Biblioteka ta może obsłużyć zarówno komunikacje przez SPI jak i I$^2$C. \newline
+Poniższa linijka sugeruje, że używanym połączeniem jest SPI.
+\begin{lstlisting}
+//#define OLED_USE_I2C
+\end{lstlisting}
+Jeśli bardzo chcesz użyć interfejsu I$^2$C musisz odkomentować tą linijkę.
 \subsection{Zapis na kartę pamięci}
 
 \section{I$^2$C}
