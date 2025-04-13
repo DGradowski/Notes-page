@@ -6,6 +6,9 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{graphicx}
+
+\graphicspath{{./img}}
 
 \definecolor{comment}{RGB}{0,128,0} % dark green
 \definecolor{string}{RGB}{255,0,0}  % red
@@ -41,21 +44,23 @@
 \newpage
 \section{Prolog}
 Notatki robione w oparciu o projekt, który robiłem sam na zajęciach (Licznik jak coś).
-Proszę nie udostępniać Panience Ś.
 
-\begin{center}
+\begin{table}[H]
+    \centering
+    \label{tab:tab1}
     \begin{tabular}{ |c|c|c| }
         \hline
         \multicolumn{3}{|c|}{Komponenciki}\\
         \hline
-        Płytka & LPC1768/9 & Intrukcja \\ 
+        Płytka & LPC1768/9 & \href{https://dgradowski.github.io/Notes-page/docs/sem4/wbudowane/notatka/docs/Schemat%20ver%20B%20(z%20portem%20USB%20typu%20A).pdf}{Schemat} \\ 
         \hline
         Ekran OLED & Rodzaj & Intrukcja \\
         \hline
-        Termometr & LM75 & Instrukcja \\
+        Termometr & LM75 & \href{https://dgradowski.github.io/Notes-page/docs/sem4/wbudowane/notatka/docs/LM75.pdf}{Instrukcja} \\
         \hline  
     \end{tabular}
-\end{center}
+    \caption{Używane urządzenia z przydatnymi dokumentami}
+\end{table}
 \section{GPIO}
 \subsection{Informacje ogólne}
 \textbf{GPIO} (General Purpose Input/Output) jest interfejsem, który 
@@ -123,7 +128,7 @@ void GPIO_SetDir(uint8_t port, uint32_t bitValue, uint8_t dir)
 	}
 }
 \end{lstlisting}
-
+\newpage
 Jeśli chcielibyśmy na przykład używać pinu 2 jako wyjścia to wartość binarna
 w rejestrze FIODIR musi wyglądać następująco $0100$ co jest równe 4 w dziesiętnym.
 Z tą wiedzą wiemy, że bit ten możemy zmienić wywołująć funkcję na jeden z poniższych sposobów:
@@ -133,7 +138,6 @@ GPIO_SetDir(0, (1 << 2), 1); // preferowany
 GPIO_SetDir(0, 0x4, 1);
 GPIO_SetDir(0, 4, 1);
 \end{lstlisting}
-\newpage
 Po wywołaniu funkcji nasze rejestry będą wyglądały następująco:
 \begin{table}[H]
     \centering
@@ -248,6 +252,62 @@ if if ((GPIO_ReadValue(0) & 8) == 0) {
 }
 \end{lstlisting}
 \subsection{Guziczki}
+W poprzedniej sekcji wytłumaczyłem jak operować na rejestrach. Teraz czas na
+użycie tej wiedzy w praktyce. W przypadku płytki LPC1768 mamy 3 zwykłe przyciski 
+(2 z nich mają swoje przeznaczenie w samym działaniu płytki i nie powinniśmy 
+zmieniać ich zastosowania (Wakeup i Reset))
+i joystick, który wysyła sygnał na 5 różnych pinów (4 strony + wciśnięcie). W 
+\hyperref[tab:tab1]{schemacie płytki zamieszczonym w tabeli 1} na stronie 6 podpisanej
+jako Direct Digital IO peripherals. Nasz przycisk, który możemy wykorzystać wygląda 
+w schemacie następująco:
+
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{GPIO_btn.png}
+\caption{\label Schemat przycisku SW3/Bootloader Enable}
+\end{figure}
+
+Wiemy, który przycisk chcemy wykorzystać patrząc na schemat. Jak teraz znaleźć go na
+samej płytce? Wszystkie przyciski są bezpośrednio podpisane na płytce, więc musimy znaleźć
+słowo klucz obok przycisku. Te słowa to SW3, GPIO\textunderscore 37 lub BL\textunderscore EN.
+
+Jeśli widzimy przycisk na płytce i jesteśmy w gotowości by go przycisnąć to pozostało
+nam tylko zaprogramować funkcjonalności, ale by to zrobić potrzebny jest nam adres
+rejestru na który wpływa ten przycisk. Aby to odkryć znów będzie potrzebny schemat
+płytki z \hyperref[tab:tab1]{tabeli 1} tylko tym razem strona 2. Na stronie drugiej
+odszukujemy \textbf{BL\textunderscore EN} albo \textbf{GPIO\textunderscore 37}.
+Akurat obydwa te oznaczenia są po lewej stronie więc na tej samej wysokości szukamy
+komórki tabeli w kolumnie opisanej nazwą naszej płytki. Na tej samej wysokości co 
+oznaczenie BL\textunderscore EN jest komórka w której mamy napisane \textbf{P0.4}.
+Rozbijmy sobie to oznaczenie:
+\begin{itemize}
+    \item \textbf{P0} - port 0 (numerowany od 0)
+    \item \textbf{4} - pin 4 (numerowany od 0)
+\end{itemize}
+GPIO\textunderscore 37 wskazuje też inny adres ale szczerze to nie sprawdzałem czy 
+przycisk też zmienia pin na tym adresie, a jeśli nie to dlaczego ale chuj w to.
+
+Mamy już w zasięgu palca nasz przycisk gotowy do wciśnięcia, znamy już adres na który
+dany przycisk wpływa, pozostało tylko zaprogramować jakąś funkcjonalność. 
+Przyciski jeśli chodzi o nadawany sygnał są bardzo nieintuicyjne, ponieważ niewciśnięty
+przycisk daje na wyjściu 1, a wciśnięty daje 0. 
+\newpage
+W instrukcji warunkowej możemy przycisków użyć w następujący sposób.
+\begin{lstlisting}
+if ((GPIO_ReadValue(0) & (1 << 4)) == 0) {
+    // przycisk wcisniety
+} else {
+    // przycisk nie wcisniety
+}
+
+if ((GPIO_ReadValue(0) & (1 << 4)) > 0) {
+    // przycisk nie wcisniety
+} else {
+    // przycisk wcisniety
+}
+\end{lstlisting}
+\textbf{UWAGA. Trzeba pamiętać, że wartość FIODIR odpowiadający pinowi na który
+przycisk nadaje musi być ustawiona na 0. W innym wypadku pin nie będzie odbierał sygnału
+z przycisku.}
 
 \section{SPI}
 \subsection{Informacje ogólne}
