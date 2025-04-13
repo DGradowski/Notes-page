@@ -1,9 +1,35 @@
 \documentclass[11pt]{article}
+\usepackage{float}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{amsmath, amssymb, amsthm}
 \usepackage[hidelinks]{hyperref}
 \usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{comment}{RGB}{0,128,0} % dark green
+\definecolor{string}{RGB}{255,0,0}  % red
+\definecolor{keyword}{RGB}{0,0,255} % blue
+\lstset{language=C} 
+
+\lstdefinestyle{mystyle}{
+    commentstyle=\color{comment},
+	stringstyle=\color{string},
+	keywordstyle=\color{keyword},
+	basicstyle=\footnotesize\ttfamily,
+	numbers=left,
+	numberstyle=\tiny,
+	numbersep=5pt,
+	frame=lines,
+	breaklines=true,
+	prebreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+	showstringspaces=false,
+	upquote=true,
+	tabsize=2,
+}
+
+\lstset{style=mystyle}
+
 
 \title{Wbudy do budy}
 \author{Dawid Gradowski (puckmoment na dc)}
@@ -15,6 +41,7 @@
 \newpage
 \section{Prolog}
 Notatki robione w oparciu o projekt, który robiłem sam na zajęciach (Licznik jak coś).
+Proszę nie udostępniać Panience Ś.
 
 \begin{center}
     \begin{tabular}{ |c|c|c| }
@@ -35,6 +62,191 @@ Notatki robione w oparciu o projekt, który robiłem sam na zajęciach (Licznik 
 możemy wykorzystać zarówno jako wejście jak i wyjście. To jak zachowuje się 
 ten interfejs zależne jest od stanu Enable Line. Jeśli stan Enable Line jest
 1 to interfejs robi za wejście, a jeśli 0 to robi za wyjście.
+
+Płytka LPC1768 ma 5 portów (oznaczone od 0 do 4) i każdemu z nich
+odpowiadają 4 rejestry 32 bitowe. Rejestry te w pliku oraz w programie możemy
+odnaleźć pod nazwami:
+\begin{itemize}
+    \item \textbf{FIOPIN} - odczytywanie wartości na pinach
+    \item \textbf{FIOSET} - ustawianie wartości 1 na pinach (ustawionych na output)
+    \item \textbf{FIOCLR} - zerowanie wartości na pinach (ustawionych na output)
+    \item \textbf{FIODIR} - ustalanie kierunku pinu (0: wejście| 1: wyjście)
+\end{itemize}
+Oznaczenie FIO oznacza Fast Input/Output, czyli IO (Input/Output) tylko szybsze
+(tak przeczytałem na forum to nie żart). Teraz trochę jak korzystać z tych rejestrów w praktyce.
+Mimo, że rejestry są 32 bitowe w przykładzie będę operował na pierwszych 4 bitach
+bo nie chce mi się tyle pisać.
+Na początku uznajmy, że wszystkie bity w rejestrach są ustawione na LOW (czyli 0).
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Rejestr & 3 & 2 & 1 & 0 \\ \hline
+        FIOPIN & 0 & 0 & 0 & 0 \\ \hline
+        FIOSET & 0 & 0 & 0 & 0 \\ \hline
+        FIOCLR & 0 & 0 & 0 & 0 \\ \hline
+        FIODIR & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+\end{table}
+Interfejs taki ma 32 piny i w tym momencie są ustawione na wejście. Urządzenie więc
+nie może tym interfejsem wysyłać sygnału. Załóżmy, że jakieś urządzenie jest podłączone
+do pinu oznaczonego numerem 3 i nadaje sygnał wysoki (1). Wtedy nasza tabelka będzie wyglądała tak:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Rejestr & 3 & 2 & 1 & 0 \\ \hline
+        FIOPIN & 1 & 0 & 0 & 0 \\ \hline
+        FIOSET & 0 & 0 & 0 & 0 \\ \hline
+        FIOCLR & 0 & 0 & 0 & 0 \\ \hline
+        FIODIR & 0 & 0 & 0 & 0 \\ \hline
+    \end{tabular}
+\end{table}
+Jako iż wszystkie bity w FIODIR są ustawione na 0, to żaden z naszych pinów nie jest
+wyjściem więc nie możemy zmieniać wartości na pinach. Aby zmienić wartość na konkretnym bicie
+możemu użyć następującej funkcji:
+
+\begin{lstlisting}
+void GPIO_SetDir(uint8_t port, uint32_t bitValue, uint8_t dir)
+{
+	LPC_GPIO_TypeDef *pGPIO = GPIO_GetPointer(port);
+
+	if (pGPIO != NULL) {
+		// Enable Output
+		if (dir) {
+			pGPIO->FIODIR |= bitValue;
+		}
+		// Enable Input
+		else {
+			pGPIO->FIODIR &= ~bitValue;
+		}
+	}
+}
+\end{lstlisting}
+
+Jeśli chcielibyśmy na przykład używać pinu 2 jako wyjścia to wartość binarna
+w rejestrze FIODIR musi wyglądać następująco $0100$ co jest równe 4 w dziesiętnym.
+Z tą wiedzą wiemy, że bit ten możemy zmienić wywołująć funkcję na jeden z poniższych sposobów:
+
+\begin{lstlisting}[language=c]
+GPIO_SetDir(0, (1 << 2), 1); // preferowany
+GPIO_SetDir(0, 0x4, 1);
+GPIO_SetDir(0, 4, 1);
+\end{lstlisting}
+\newpage
+Po wywołaniu funkcji nasze rejestry będą wyglądały następująco:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Rejestr & 3 & 2 & 1 & 0 \\ \hline
+        FIOPIN & 1 & 0 & 0 & 0 \\ \hline
+        FIOSET & 0 & 0 & 0 & 0 \\ \hline
+        FIOCLR & 0 & 0 & 0 & 0 \\ \hline
+        FIODIR & 0 & 1 & 0 & 0 \\ \hline
+    \end{tabular}
+\end{table}
+Teraz możemy zmienić wartość bitu 2 w rejestrze FIOPIN, nie możemy tego jednak zrobić
+bezpośrednio. Aby zmienić wartość na pinie oznaczonym numerem 2 naszego interfejsu
+musimy wykorzystać rejestry \textbf{FIOSET} i \textbf{FIOCLR}. Aby zmienić wartość
+w tych 2 rejestrach możemy wykorzystać poniższe 2 funkcje:
+\begin{lstlisting}[language=c]
+void GPIO_SetValue(uint8_t portNum, uint32_t bitValue)
+{
+    LPC_GPIO_TypeDef *pGPIO = GPIO_GetPointer(portNum);
+
+    if (pGPIO != NULL) {
+        pGPIO->FIOSET = bitValue;
+    }
+}
+
+void GPIO_ClearValue(uint8_t portNum, uint32_t bitValue)
+{
+	LPC_GPIO_TypeDef *pGPIO = GPIO_GetPointer(portNum);
+
+	if (pGPIO != NULL) {
+		pGPIO->FIOCLR = bitValue;
+	}
+}
+\end{lstlisting}
+Te 2 rejestry i funkcje działają w sposób bardzo podobny. Obydwa odpowiadają za zmiane
+wartości w rejestrze FIOPIN. FIOSET ustawia wartość na 1, FIOCLR ustawia wartość na 0.
+Obydwa rejestry po zmianie bitu w rejestrze FIOPIN od razu są zerowane. A więc by zmieniać
+wartość pinu 2, trzeba wywołać metodę w taki sposób:
+\begin{lstlisting}[language=c]
+GPIO_SetValue(0, (1 << 2)); // preferowany
+GPIO_SetValue(0, 0x4);
+GPIO_SetValue(0, 4);
+\end{lstlisting}
+Po wykonaniu tej funkcji wartości w rejestrach będą wyglądały następująco:
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Rejestr & 3 & 2 & 1 & 0 \\ \hline
+        FIOPIN & 1 & 0 & 0 & 0 \\ \hline
+        FIOSET & 0 & 1 & 0 & 0 \\ \hline
+        FIOCLR & 0 & 0 & 0 & 0 \\ \hline
+        FIODIR & 0 & 1 & 0 & 0 \\ \hline
+    \end{tabular}
+\end{table}
+I od razu zostanie zmienione na
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|}
+        \hline
+        Rejestr & 3 & 2 & 1 & 0 \\ \hline
+        FIOPIN & 1 & 1 & 0 & 0 \\ \hline
+        FIOSET & 0 & 0 & 0 & 0 \\ \hline
+        FIOCLR & 0 & 0 & 0 & 0 \\ \hline
+        FIODIR & 0 & 1 & 0 & 0 \\ \hline
+    \end{tabular}
+\end{table}
+Wartość pinu zostanie zmieniona praktycznie natychmiast, według czatu GPT zazwyczaj w 1 lub 2
+cyklach CPU, dlatego od razu po zmianie można odczytywać wartość w rejestrze FIOPIN oraz
+nie ma sensu odczytywać wartości z rejestrów FIOSET i FIOCLR bo w większości przypadków
+będą one równe 0. Metoda FIOCLR działa w ten sam sposób więc nie będę jej tłumaczył.
+Zarówno FIOSET jak i FIOCLR nie zadziałają na piny, dla których odpowiadające im wartości
+w rejestrze FIODIR są równe 0.
+
+Aby odczytać wartości z rejestru FIOPIN należy użyć następującej funkcji:
+\begin{lstlisting}[language=c]
+uint32_t GPIO_ReadValue(uint8_t portNum)
+{
+	LPC_GPIO_TypeDef *pGPIO = GPIO_GetPointer(portNum);
+
+	if (pGPIO != NULL) {
+		return pGPIO->FIOPIN;
+	}
+
+	return (0);
+}
+\end{lstlisting}
+\newpage
+Dana funkcja odczytuje jednak całą wartość rejestru a nie pojedynczego bitu.
+Jęśli chcemy napisać warunek zależny od tego czy mamy na bicie 3 wartość niską bądź
+wysoką, to możemy to napisać na parę sposobów:
+
+\begin{lstlisting}[language=c]
+// preferowane
+if if ((GPIO_ReadValue(0) & (1 << 3)) == 0) {
+    // niski sygnal
+} else {
+    // wysoki sygnal
+}
+
+if (((GPIO_ReadValue(0) >> 3) & 0x01) == 0) {
+    // niski sygnal
+} else {
+    // wysoki sygnal
+}
+
+if if ((GPIO_ReadValue(0) & 8) == 0) {
+    // niski sygnal
+} else {
+    // wysoki sygnal
+}
+\end{lstlisting}
 \subsection{Guziczki}
 
 \section{SPI}
