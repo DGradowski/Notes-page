@@ -1,0 +1,405 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{fontspec}
+\setmainfont{Book Antiqua}
+\usepackage{setspace} % do odstępów
+\usepackage{quoting} % ładne cytaty
+\usepackage{amsmath}
+\usepackage{multirow}
+\usepackage{array}
+
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+
+% Ustawienia kolorów
+\pagecolor{black}
+\color{white}
+\newcommand{\zero}{\textcolor{red}{0}}
+\newcommand{\one}{\textcolor{green}{1}}
+
+\begin{document}
+
+% Strona tytułowa
+\begin{titlepage}
+    \centering
+    {\Huge\bfseries Egzamin tele\par}
+    \vspace{2cm}
+    {\Large Dawid Gradowski \par}
+    {\large PuckMoment \par}
+    \vfill
+
+    \begin{quoting}[]
+        \begin{center}
+            \Large„In this world, is the destiny of mankind controlled by some transcendental entity or law? Is it like the hand of God hovering above?”
+        \end{center}
+    \end{quoting}
+    
+    \vfill
+    {\large 28.06.2025r.\par}
+\end{titlepage}
+\tableofcontents
+\section*{Prolog}
+Wszystkie notatki robione na podstawie tego co było na pierwszym terminie egzaminu.
+Wszystkie przykłady zapamiętałem i przepisałem na kartkę, nigdy nie doszło do żadnego nielegalnie
+zrobionego zdjęcia.
+\section{Dyskretne przekształcenie Fouriera ciągu $f(t)$}
+Przykładowe zadanie:
+\[
+    f(t) = 2 \cos(2\omega_0 t) + 3 \cos(4\omega_0 t) + 7 \cos(5 \omega_0 t)
+\]
+W tym zadaniu trzeba zapamiętać że:
+\[
+    \cos(\alpha t) \longleftrightarrow \pi(\delta (\omega - \alpha) + \delta (\omega + \alpha))
+\]
+\[
+    \sin(\alpha t) \longleftrightarrow j \pi(\delta (\omega + \alpha) - \delta (\omega - \alpha))
+\]
+gdzie $\alpha$ to jakaś wartość.
+
+Możemy sobie rozbić wzór naszej funkcji na części i zastosować wyżej wymienione reguły:
+\begin{enumerate}
+    \item {
+        \[
+            2\cos(2\omega_0 t) \longleftrightarrow 2\pi(\delta (\omega - 2\omega_0) + \delta (\omega + 2\omega_0))
+        \]
+    }
+    \item {
+        \[
+            3\cos(4\omega_0 t) \longleftrightarrow 3\pi(\delta (\omega - 4\omega_0) + \delta (\omega + 4\omega_0))
+        \]
+    }
+    \item {
+        \[
+            7\cos(5\omega_0 t) \longleftrightarrow 7\pi(\delta (\omega - 5\omega_0) + \delta (\omega + 5\omega_0))
+        \]
+    }
+\end{enumerate}
+Teraz wystarczy to wszystki zsumować:
+\[
+    F(\omega) = 2\pi(\delta (\omega - 2\omega_0) + \delta (\omega + 2\omega_0)) + 3\pi(\delta (\omega - 4\omega_0) + \delta (\omega + 4\omega_0)) + 7\pi(\delta (\omega - 5\omega_0) + \delta (\omega + 5\omega_0))
+\]
+
+
+\section{Dyskretne przekształcenie Fouriera ciągu $x[n]$}
+Przykładowe zadanie:
+\[
+    x[n]=[2;3;1;2]
+\]
+Dla syngału dyskretnego $x[n]$, $n = 0,1,...,N-1$, DFT jest zdefiniowane jako:
+\[
+    X[k]=\sum_{n=0}^{N-1}x[n] \cdot e^{-j \frac{2 \pi}{N} k n}\text{, dla } k = 0,1,...,N - 1
+\]
+do tego warto znać jeszcze wzór Eulera, z którego mamy:
+\[
+    e^{j \alpha} = \cos(\alpha) + j \sin(\alpha)
+\]
+\[
+    e^{-j \alpha} = \cos(\alpha) - j \sin(\alpha)
+\]
+w naszym przykładzie $\alpha = \frac{2 \pi}{N} k n$. Dlatego powyższy wzór możemy zapisać w następujący sposób:
+\[
+    X[k]=\sum_{n=0}^{N-1}x[n] \cdot e^{-j \frac{2 \pi}{N} k n} = \sum_{n=0}^{N-1}x[n] \cdot (cos(\frac{2 \pi}{N} k n) - j \sin(\frac{2 \pi}{N} k n))
+\]
+
+Dla naszego przykładu:
+\[
+    x[n]=[2;3;1;2] \text{ oraz } N = 4
+\]
+obliczamy
+\[
+    X[k]=\sum_{n=0}^{3}x[n] \cdot e^{-j \frac{2 \pi}{4} k n}\text{, dla } k = 0,1,2,3
+\]
+\[
+    X[0]=\sum_{n=0}^{3}x[n] \cdot e^{-j \frac{2 \pi}{4} 0 n} =
+    2 + 3 + 1 + 2 = 8
+\]
+\[
+    X[1]=\sum_{n=0}^{3}x[n] \cdot e^{-j \frac{2 \pi}{4} 1 n} = \sum_{n=0}^{3}x[n] \cdot (\cos(\frac{2 \pi}{4}n) - j \sin(\frac{2 \pi}{4}n)) = 
+\]
+\[
+    2 + 3 \cdot (\cos(\frac{2 \pi}{4} 1) - j \sin(\frac{2 \pi}{4} 1)) + (\cos(\frac{2 \pi}{4} 2) - j \sin(\frac{2 \pi}{4} 2))
+    + 2 \cdot (\cos(\frac{2 \pi}{4} 3) - j \sin(\frac{2 \pi}{4} 3)) = 
+\]
+\[
+    2 + 3(\cos(\frac{\pi}{2}) - j\sin(\frac{\pi}{2})) + (\cos(\pi) - j \sin(\pi)) + 2(\cos{\frac{3\pi}{2}} - j\sin(\frac{3\pi}{2})) = 
+\]
+\[
+    2 - 3j - 1 + 2j = 1 - 1j
+\]
+
+\[
+    X[2]=\sum_{n=0}^{3}x[n] \cdot e^{-j \frac{2 \pi}{4} 2 n} = 
+    \sum_{n=0}^{3}x[n] \cdot (\cos(\frac{2 \pi}{4}2n) - j \sin(\frac{2 \pi}{4}2n)) = 
+\]
+\[
+    2 + 3 \cdot (\cos(\frac{2 \pi}{4} 2) - j \sin(\frac{2 \pi}{4} 2)) + (\cos(\frac{2 \pi}{4} 4) - j \sin(\frac{2 \pi}{4} 4))
+    + 2 \cdot (\cos(\frac{2 \pi}{4} 6) - j \sin(\frac{2 \pi}{4} 6)) = 
+\]
+\[
+    2 + 3(\cos(\pi) - j\sin(\pi)) + (\cos(2\pi) - j \sin(2\pi)) + 2(\cos{(3\pi)} - j\sin(3\pi)) = 
+\]
+\[
+    2 + 3(\cos(\pi) - j\sin(\pi)) + (\cos(0) - j \sin(0)) + 2(\cos{(\pi)} - j\sin(\pi)) = 
+\]
+\[
+    2 - 3 + 1 - 2 = -2
+\]
+\newpage
+\[
+    X[3]=\sum_{n=0}^{3}x[n] \cdot e^{-j \frac{2 \pi}{4} 3 n} = 
+    \sum_{n=0}^{3}x[n] \cdot (\cos(\frac{2 \pi}{4}3n) - j \sin(\frac{2 \pi}{4}3n)) = 
+\]
+\[
+    2 + 3 \cdot (\cos(\frac{2 \pi}{4} 3) - j \sin(\frac{2 \pi}{4} 3)) + (\cos(\frac{2 \pi}{4} 6) - j \sin(\frac{2 \pi}{4} 6))
+    + 2 \cdot (\cos(\frac{2 \pi}{4} 9) - j \sin(\frac{2 \pi}{4} 9)) = 
+\]
+\[
+    2 + 3(\cos(\frac{3\pi}{2}) - j\sin(\frac{3\pi}{2})) + (\cos(3\pi) - j \sin(3\pi)) + 2(\cos{\frac{9\pi}{2}} - j\sin(\frac{9\pi}{2})) = 
+\]
+\[
+    2 + 3(\cos(\frac{3\pi}{2}) - j\sin(\frac{3\pi}{2})) + (\cos(\pi) - j \sin(\pi)) + 2(\cos{\frac{\pi}{2}} - j\sin(\frac{\pi}{2})) = 
+\]
+\[
+    2 + 3j - 1 - 2j = 1 + 1j
+\]
+więc odpowiedź to:
+\[
+    X[n] = [8, 1 - 1j, -2, 1 + 1j]
+\]
+
+Jeśli ktoś ma problem z zapamiętaniem wartości trygonometrycznych to proponuje zapamiętać taką tabelke:
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|M{1cm}|M{1cm}|M{1cm}|M{1cm}|M{1cm}|M{1cm}|M{1cm}|}
+    \hline
+    $\alpha$ & 0 & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$ & $\pi$ \\
+    \hline
+    $\sin(\alpha)$ & $\frac{\sqrt{0}}{2}$ & $\frac{\sqrt{1}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{4}}{2}$ & 0 \\
+    \hline
+    $\cos(\alpha)$ & $\frac{\sqrt{4}}{2}$ & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{1}}{2}$ & $\frac{\sqrt{0}}{2}$ & -1 \\
+    \hline
+\end{tabular}
+\end{center}
+Co zapisane w normalny sposób daje
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{|M{1cm}|M{1cm}|M{1cm}|M{1cm}|M{1cm}|M{1cm}|M{1cm}|}
+    \hline
+    $\alpha$ & 0 & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$ & $\pi$ \\
+    \hline
+    $\sin(\alpha)$ & $0$ & $\frac{1}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{\sqrt{3}}{2}$ & $1$ & 0 \\
+    \hline
+    $\cos(\alpha)$ & $1$ & $\frac{\sqrt{3}}{2}$ & $\frac{\sqrt{2}}{2}$ & $\frac{{1}}{2}$ & $0$ & -1 \\
+    \hline
+\end{tabular}
+\end{center}
+\section{Filtracja sygnału}
+Przykładowe zadanie:
+\[
+    \text{Sygnał: } x[n]=[4;1;7;3]
+\]
+\[
+    \text{Filtr: } h[n]=[2;4;1]
+\]
+Długość przefiltrowanego sygnału to suma długości sygnału i filtra minus 1.
+\[
+    len(x) + len(h) - 1 = len(y)
+\]
+\[
+    4 + 3 - 1 = 6
+\]
+
+Wzór ogólny przy ograniczonym zakresie wygląda następująco:
+\[
+    y[n] = \sum_{k=0}^{M - 1}x[k] \cdot h[n - k]
+\]
+gdzie, $M$ - długość x oraz zakładamy, dla wartości x i h spoza zakresu przyjmujemy 0.
+
+Obliczny sobie teraz nasz przykład:
+\[
+    y[0] = x[0] \cdot k[0 - 0] = 4 \cdot 2 = 8
+\]
+\[
+    y[1] = x[0] \cdot k[1 - 0] + x[1] \cdot k[1 - 1] = 4 \cdot 4 + 1 \cdot 2 = 18
+\]
+\[
+    y[2] = x[0] \cdot k[2] + x[1] \cdot k[1] + x[2] \cdot k[0]  = 4 \cdot 1 + 1 \cdot 4 + 7 \cdot 2 = 22
+\]
+\[
+    y[3] = x[1] \cdot k[2] + x[2] \cdot k[1] + x[3] \cdot k[0] = 1 \cdot 1 + 7 \cdot 4 + 3 \cdot 2 = 35
+\]
+\[
+    y[4] = x[2] \cdot k[2] + x[3] \cdot k[1] = 7 \cdot 1 + 3 \cdot 4 = 19
+\]
+\[
+    y[5] = x[3] \cdot k[2] = 3 \cdot 1  = 3
+\]
+A więc otrzymujemy
+\[
+    y[n] = [8,18,22,35,19,3]
+\]
+\section{Kod Hamminga}
+Przykładowe zadanie:
+\[
+    x[n]=[1,0,1,0,0,1]
+\]
+na 10 bitach
+\subsection*{Rozwiązanie}
+Kod Hamminga pozwala nam na poprawienie jednego uszkodzonego bitu w wiadomości
+o długości $p + m$, gdzie: $m$ oznacza ilość bitów oryginalnej wiadomości, a $p$ ilość
+bitów parzystości w kodzie. W naszym przypadku mamy więc:
+\[
+    m = 6 \text{ oraz } p = 4
+\]
+Ważne jest, że:
+\[
+    2^p \ge (p + m) + 1
+\]
+W naszym przypadku $2^4$ jest większe niż $(6 + 4) + 1$ więc kod Hamminga będzie działał.
+
+Ważne jest rozmieszczenie bitów parzystości. Za pomocą $p_x$ przedstawimy bity
+parzystości, a za pomocą $m_x$ bity wiadomości.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+        \hline
+        Znaczenie & $p_1$ & $p_2$ & $m_1$ & $p_3$ & $m_2$ & $m_3$ & $m_4$ & $p_4$ & $m_5$ & $m_6$ \\
+        \hline
+    \end{tabular}
+\end{center}
+
+Można zauważyć, że $p_x$ znajduje się na miejscu $2^{x - 1}$. Dlatego $p_1$ znajduje się
+na pozycji pierwszej, a $p_4$ na 8.
+
+Bity parzystości oprócz przydzielonego z góry miejsca, mają również bity które im odpowiadają.
+Dla bitu $p_1$ będą to $(1, 3, 5, 7, 9)$. Oznacza to, że na tych 5 bitach liczba jedynek musi być
+parzysta. Teraz pytanie skąd wziąć ten zbiór? Pierwsza liczba to zawsze jest miejsce
+w którym znajduje się bit parzystości. Liczba opisująca który to jest bit parzystości mówi nam co
+ile bitów następuje zmiana. Jeśli nie wiesz o co chodzi rozpiszę to ładnie.
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+        \hline
+        $p_1$ & \textcolor{green}{1} & \textcolor{red}{0} & \textcolor{green}{1} & \textcolor{red}{0} & \textcolor{green}{1} & \textcolor{red}{0} & \textcolor{green}{1} & \textcolor{red}{0} & \textcolor{green}{1} & \textcolor{red}{0} \\
+        \hline
+        $p_2$ & \textcolor{red}{0} & \textcolor{green}{1} & \textcolor{green}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{green}{1} & \textcolor{green}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{green}{1} \\
+        \hline
+        $p_3$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{green}{1} & \textcolor{green}{1} & \textcolor{green}{1} & \textcolor{green}{1} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} \\
+        \hline
+        $p_4$ & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{red}{0} & \textcolor{green}{1} & \textcolor{green}{1} & \textcolor{green}{1} \\
+        \hline
+    \end{tabular}
+\end{center}
+Mając tą wiedze spróbujmy zakodować wiadomość. Nasza wiadomość to:
+\[
+    x[n]=[1,0,1,0,0,1]
+\]
+a więc dodając bity parzystości otrzymamy coś takiego:
+\begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+        \hline
+        Kod & $p_1$ & $p_2$ & 1 & $p_3$ & 0 & 1 & 0 & $p_4$ & 0 & 1 \\
+        \hline
+    \end{tabular}
+\end{center}
+Sprawdźmy co powinno być w miejscu $p_1$:
+\begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & \textcolor{green}{1} & 2 & \textcolor{green}{3} & 4 & \textcolor{green}{5} & 6 & \textcolor{green}{7} & 8 & \textcolor{green}{9} & 10 \\
+        \hline
+        Kod & \textcolor{green}{$p_1$} & $p_2$ & \textcolor{green}{1} & $p_3$ & \textcolor{green}{0} & 1 & \textcolor{green}{0} & $p_4$ & \textcolor{green}{0} & 1 \\
+        \hline
+    \end{tabular}
+\end{center}
+Na pozycjach które psrawdzamy dla $p_1$ mamy na nieparzystą liczbę jedynek dlatego w miejscu 
+$p_1$ wpisujemy jeden.
+\begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & \textcolor{green}{1} & 2 & \textcolor{green}{3} & 4 & \textcolor{green}{5} & 6 & \textcolor{green}{7} & 8 & \textcolor{green}{9} & 10 \\
+        \hline
+        Kod & \textcolor{green}{1} & $p_2$ & \textcolor{green}{1} & $p_3$ & \textcolor{green}{0} & 1 & \textcolor{green}{0} & $p_4$ & \textcolor{green}{0} & 1 \\
+        \hline
+    \end{tabular}
+\end{center}
+Teraz pozycja $p_2$:
+\begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & 1 & \textcolor{green}{2} & \textcolor{green}{3} & 4 & 5 & \textcolor{green}{6} & \textcolor{green}{7} & 8 & 9 & \textcolor{green}{10} \\
+        \hline
+        Kod & 1 & \textcolor{green}{$p_2$} & \textcolor{green}{1} & $p_3$ & 0 & \textcolor{green}{1} & \textcolor{green}{0} & $p_4$ & 0 & \textcolor{green}{1} \\
+        \hline
+    \end{tabular}
+\end{center}
+Liczba jedynek nieparzysta dlatego w miejscu $p_2$ wpisujemy 1:
+\begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & 1 & \textcolor{green}{2} & \textcolor{green}{3} & 4 & 5 & \textcolor{green}{6} & \textcolor{green}{7} & 8 & 9 & \textcolor{green}{10} \\
+        \hline
+        Kod & 1 & \textcolor{green}{1} & \textcolor{green}{1} & $p_3$ & 0 & \textcolor{green}{1} & \textcolor{green}{0} & $p_4$ & 0 & \textcolor{green}{1} \\
+        \hline
+    \end{tabular}
+\end{center}
+Teraz pozycja $p_3$:
+\begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & 1 & 2 & 3 & \textcolor{green}{4} & \textcolor{green}{5} & \textcolor{green}{6} & \textcolor{green}{7} & 8 & 9 & 10 \\
+        \hline
+        Kod & 1 & 1 & 1 & \textcolor{green}{$p_3$} & \textcolor{green}{0} & \textcolor{green}{1} & \textcolor{green}{0} & $p_4$ & 0 & 1 \\
+        \hline
+    \end{tabular}
+\end{center}
+Liczba jedynek nieparzysta dlatego w miejscu $p_3$ wpisujemy 1:
+\begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & 1 & 2 & 3 & \textcolor{green}{4} & \textcolor{green}{5} & \textcolor{green}{6} & \textcolor{green}{7} & 8 & 9 & 10 \\
+        \hline
+        Kod & 1 & 1 & 1 & \textcolor{green}{1} & \textcolor{green}{0} & \textcolor{green}{1} & \textcolor{green}{0} & $p_4$ & 0 & 1 \\
+        \hline
+    \end{tabular}
+\end{center}
+Teraz pozycja $p_4$:
+\begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & 1 & 2 & 3 & 4 & 5 & 6 & 7 & \textcolor{green}{8} & \textcolor{green}{9} & \textcolor{green}{10} \\
+        \hline
+        Kod & 1 & 1 & 1 & 1 & 0 & 1 & 0 & \textcolor{green}{$p_4$} & \textcolor{green}{0} & \textcolor{green}{1} \\
+        \hline
+    \end{tabular}
+\end{center}
+Liczba jedynek nieparzysta dlatego w miejscu $p_4$ wpisujemy 1:
+\begin{center}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+        \hline
+        Numer bita & 1 & 2 & 3 & 4 & 5 & 6 & 7 & \textcolor{green}{8} & \textcolor{green}{9} & \textcolor{green}{10} \\
+        \hline
+        Kod & 1 & 1 & 1 & 1 & 0 & 1 & 0 & \textcolor{green}{1} & \textcolor{green}{0} & \textcolor{green}{1} \\
+        \hline
+    \end{tabular}
+\end{center}
+Otrzymujemy na końcu taki kod:
+\[
+    k[n]=[1,1,1,1,0,1,0,1,0,1]
+\]
+
+\section{Przekształcenie Fouriera sygnału}
+Przykładowe zadanie:
+\[
+    \text{Sygnał: }\cos (4t)
+\]
+\[
+    \text{Fala nośna: }2 \cos(20t)
+\]
+\end{document}

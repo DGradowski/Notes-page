@@ -346,6 +346,25 @@ Z tego filmiku też kradne obrazki więc no. A więc wszystkie te sygnały są u
     \includegraphics[width=\textwidth]{SPI_communication.png}
     \caption{Schemat komunikacji Master-Slave w interfejsie SPI}
 \end{figure}
+Etapy komunikacji w tym interfejsie wyglądają następująco:
+\begin{enumerate}
+    \item {
+        Na lini CS następuje zmiana sygnału z wysokiego na niski. Oznacza to, że slave
+        do którego trafia niski sygnał, będzie tym z którym master będzie się komunikował.
+    }
+    \item {
+        Na lini SCLK wysyłany sygnał zmienia się z wysokiego na niski i z powrotem, by ustalić
+        częstotliwość wysyłanych i odbieranych sygnałów z lini MOSI i MISO.
+    }
+    \item {
+        Master wysyła sygnały niskie i wysokie za pomocą połączenia MOSI, a slave odsyła sygnał
+        za pomocą połączenia MISO.
+    }
+    \item {
+        Po zakończonej komunikacji sygnał na lini CS wraca do stanu wysokiego.
+    }
+\end{enumerate}
+
 \subsubsection{SPI Modes}
 SPI może pracować w 4 różnych trybach, zależnych od CPOL (clock polarity) i
 CPHA (clock phase).
@@ -432,6 +451,39 @@ Poniższa linijka sugeruje, że używanym połączeniem jest SPI.
 //#define OLED_USE_I2C
 \end{lstlisting}
 Jeśli bardzo chcesz użyć interfejsu I$^2$C musisz odkomentować tą linijkę.
+
+\subsubsection{Główna funckja zmieniająca konkretny pixel}
+Główną funckją do zmiany koloru jednego pixela na ekranie oled jest funckja oled\textunderscore putPixel
+z pliku oled.c. Funkcja ta jest zbyt długa bym ją zamieszczał ją tu w całości ciągiem więc omówie ją
+w częściach. Zanim zaczniemy używać funkcji olde\textunderscore putPixel, musimy wywołać funkcję
+oled\textunderscore init.
+\begin{lstlisting}
+void oled_init (void)
+{
+    int i = 0;
+
+    //GPIO_SetDir(PORT0, 0, 1);
+    GPIO_SetDir(2, (1<<1), 1);
+    GPIO_SetDir(2, (1<<7), 1);
+    GPIO_SetDir(0, (1<<6), 1);
+
+    /* make sure power is off */
+    GPIO_ClearValue( 2, (1<<1) );
+
+    OLED_CS_OFF();
+
+    runInitSequence();
+
+    memset(shadowFB, 0, SHADOW_FB_SIZE);
+
+    /* small delay before turning on power */
+    for (i = 0; i < 0xffff; i++);
+
+     /* power on */
+    GPIO_SetValue( 2, (1<<1) );
+}
+\end{lstlisting}
+
 \subsection{Zapis na kartę pamięci}
 
 \section{I$^2$C}
